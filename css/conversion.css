@@ -198,7 +198,7 @@
 }
 
 .social-proof-avatar {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #000;
     color: white;
     width: 45px;
     height: 45px;
@@ -438,6 +438,6 @@
 .lead-magnet-close:focus,
 .cta-button:focus,
 .sticky-cta-button:focus {
-    outline: 3px solid #667eea;
+    outline: 3px solid #000;
     outline-offset: 2px;
 }

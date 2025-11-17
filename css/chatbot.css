@@ -504,7 +504,7 @@
 .chatbot-send:focus,
 .chatbot-minimize:focus,
 .quick-reply:focus {
-    outline: 3px solid #667eea;
+    outline: 3px solid #000;
     outline-offset: 2px;
 }
 

@@ -366,6 +366,6 @@
 .newsletter-close:focus,
 .newsletter-input:focus,
 .newsletter-submit:focus {
-    outline: 3px solid #667eea;
+    outline: 3px solid #000;
     outline-offset: 2px;
 }
