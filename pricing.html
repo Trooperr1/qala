@@ -448,7 +448,7 @@
                     <p style="color: #666; font-size: 1.1rem; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
                         Book a free 30-minute consultation and we'll recommend the perfect solution for your business
                     </p>
-                    <a href="contact.html" class="cta-button" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(102,126,234,0.3); transition: all 0.3s;">
+                    <a href="contact.html" class="cta-button" style="display: inline-block; background: #000; color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: all 0.3s;">
                         Book Free Consultation →
                     </a>
                 </div>
@@ -473,7 +473,7 @@
                 left: 0;
                 right: 0;
                 height: 4px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                background: #000;
                 transform: scaleX(0);
                 transition: transform 0.3s ease;
             }
@@ -481,7 +481,7 @@
             .service-card:hover {
                 transform: translateY(-8px);
                 box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-                border-color: #667eea;
+                border-color: #000;
             }
 
             .service-card:hover::before {
@@ -489,15 +489,15 @@
             }
 
             .service-card.featured {
-                border: 2px solid #667eea;
-                background: linear-gradient(135deg, rgba(102,126,234,0.05) 0%, rgba(118,75,162,0.05) 100%);
+                border: 2px solid #000;
+                background: rgba(0,0,0,0.02);
             }
 
             .popular-badge {
                 position: absolute;
                 top: 20px;
                 right: 20px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                background: #000;
                 color: white;
                 padding: 5px 15px;
                 border-radius: 20px;
@@ -533,10 +533,7 @@
             .price-amount {
                 font-size: 3rem;
                 font-weight: 900;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
+                color: #000;
             }
 
             .price-currency {
@@ -583,9 +580,10 @@
             }
 
             .service-cta:hover {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                background: #000;
+                color: white;
                 transform: translateY(-2px);
-                box-shadow: 0 10px 25px rgba(102,126,234,0.3);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             }
 
             .addon-card {
@@ -597,7 +595,7 @@
             }
 
             .addon-card:hover {
-                border-color: #667eea;
+                border-color: #000;
                 box-shadow: 0 10px 30px rgba(0,0,0,0.1);
                 transform: translateY(-3px);
             }
