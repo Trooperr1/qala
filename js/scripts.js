@@ -1,22 +1,36 @@
 // JAFF STUDIO - Shared JavaScript
 
-// THREE.JS 3D Background - BLACK & WHITE
+// THREE.JS 3D Background - BLACK & WHITE (Optimized)
 function init3DBackground() {
+    // Wait for Three.js to load
+    if (typeof THREE === 'undefined') {
+        console.log('Three.js not loaded yet, will retry...');
+        setTimeout(init3DBackground, 100);
+        return;
+    }
+
     const canvas = document.getElementById('canvas-3d');
     if (!canvas) return;
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+
+    // Optimized renderer settings
+    const renderer = new THREE.WebGLRenderer({
+        canvas,
+        alpha: true,
+        antialias: window.innerWidth > 1024, // Only on desktop
+        powerPreference: 'high-performance'
+    });
 
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     camera.position.z = 5;
 
-    // Particle System - White particles (reduce for mobile)
+    // Particle System - White particles (optimized counts)
     const particlesGeometry = new THREE.BufferGeometry();
     const isMobile = window.innerWidth <= 768;
-    const particleCount = isMobile ? 800 : 2000;
+    const particleCount = isMobile ? 500 : 1500; // Slightly reduced for performance
     const positions = new Float32Array(particleCount * 3);
 
     for (let i = 0; i < particleCount * 3; i += 3) {
@@ -38,7 +52,7 @@ function init3DBackground() {
     const particles = new THREE.Points(particlesGeometry, particlesMaterial);
     scene.add(particles);
 
-    // 3D Geometric Shapes - White wireframe
+    // 3D Geometric Shapes - White wireframe torus
     const torusGeometry = new THREE.TorusGeometry(1.5, 0.4, 16, 100);
     const torusMaterial = new THREE.MeshBasicMaterial({
         color: 0xffffff,
@@ -49,7 +63,7 @@ function init3DBackground() {
     const torus = new THREE.Mesh(torusGeometry, torusMaterial);
     scene.add(torus);
 
-    // Mouse Movement
+    // Mouse Movement (interactive)
     let mouseX = 0, mouseY = 0;
     document.addEventListener('mousemove', (e) => {
         mouseX = (e.clientX / window.innerWidth) * 2 - 1;
@@ -57,8 +71,9 @@ function init3DBackground() {
     });
 
     // Animation Loop
+    let animationId;
     function animate() {
-        requestAnimationFrame(animate);
+        animationId = requestAnimationFrame(animate);
 
         particles.rotation.y += 0.0003;
         particles.rotation.x += 0.0002;
@@ -71,13 +86,27 @@ function init3DBackground() {
 
         renderer.render(scene, camera);
     }
+
+    // Pause when tab not visible (save battery/CPU)
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            if (animationId) cancelAnimationFrame(animationId);
+        } else {
+            animate();
+        }
+    });
+
     animate();
 
-    // Handle Resize
+    // Throttled resize handler
+    let resizeTimeout;
     window.addEventListener('resize', () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }, 250);
     });
 }
 
