@@ -12,7 +12,7 @@
 // Configuration
 const CONVERSION_CONFIG = {
     exitIntent: {
-        enabled: true,
+        enabled: false, // Disabled per user request
         showDelay: 5000, // Don't show for first 5 seconds on page
         cookieName: 'jaff_exit_shown',
         cookieDays: 7 // Don't show again for 7 days
