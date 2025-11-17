@@ -478,7 +478,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize all conversion optimization features
     exitIntentPopup = new ExitIntentPopup();
     stickyScrollCTA = new StickyScrollCTA();
-    socialProofNotifications = new SocialProofNotifications();
+    // socialProofNotifications = new SocialProofNotifications(); // Disabled per user request
     leadMagnetTriggers = new LeadMagnetTriggers();
 
     // Track page view
