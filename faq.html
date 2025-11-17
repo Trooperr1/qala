@@ -20,6 +20,11 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/conversion.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="css/newsletter.css">
+    <link rel="stylesheet" href="css/performance.css">
+    <link rel="stylesheet" href="css/transitions.css">
 </head>
 <body>
     <!-- 3D Canvas Background -->
@@ -27,6 +32,11 @@
 
     <!-- Gradient Overlay -->
     <div class="gradient-overlay"></div>
+
+    <!-- Floating Orbs -->
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="floating-orb orb-3"></div>
 
     <!-- Content Layer -->
     <div class="content-layer">
@@ -64,151 +74,271 @@
         </div>
 
         <!-- FAQ Section -->
-        <section style="margin-top: 80px;">
-            <p class="section-eyebrow" style="color: #666;">QUESTIONS</p>
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <p class="section-subtitle">Everything you need to know about working with us</p>
+        <section style="margin-top: 80px; padding-bottom: 100px;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <p class="section-eyebrow" style="color: #666;">QUESTIONS</p>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know about working with us</p>
+            </div>
 
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        What's included in the "Pick 1" or "Pick 2" options?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>You choose which services you need most. Starter gets 1 service, Professional gets 2. We'll discuss your business goals and recommend the best combination during our kickoff call.</p>
+            <!-- Search Bar -->
+            <div style="max-width: 700px; margin: 0 auto 60px;">
+                <div style="position: relative;">
+                    <input
+                        type="text"
+                        id="faqSearch"
+                        placeholder="Search FAQs... (e.g., 'pricing', 'timeline', 'POS system')"
+                        style="width: 100%; padding: 18px 50px 18px 20px; border: 2px solid #e0e0e0; border-radius: 50px; font-size: 1rem; transition: all 0.3s; outline: none;"
+                        onfocus="this.style.borderColor='#000'"
+                        onblur="this.style.borderColor='#e0e0e0'"
+                    />
+                    <span style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 1.2rem;">🔍</span>
+                </div>
+            </div>
+
+            <div class="faq-container" style="max-width: 1200px; margin: 0 auto;">
+
+                <!-- Category 1: Pricing & Payments -->
+                <div class="faq-category glass-card" style="padding: 40px; margin-bottom: 40px;">
+                    <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 30px; color: #000; display: flex; align-items: center; gap: 15px;">
+                        <span style="font-size: 2rem;">💰</span> Pricing & Payments
+                    </h3>
+
+                    <div class="faq-item" data-category="pricing">
+                        <button class="faq-question">
+                            How much does a website cost?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our website pricing ranges from <strong>500 CHF for a Landing Page</strong> to <strong>4,500 CHF for a full E-Commerce Store</strong>. A standard Business Website costs <strong>2,500 CHF</strong>. Check our <a href="pricing.html" style="color: #000; text-decoration: underline;">pricing page</a> for all options and detailed features.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="pricing">
+                        <button class="faq-question">
+                            What's the price for a POS system or CRM?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p><strong>POS System:</strong> 3,200 CHF with inventory tracking, sales analytics, and multi-device support.<br>
+                            <strong>CRM System:</strong> 3,800 CHF with customer management, pipeline tracking, and automation.<br>
+                            <strong>Booking System:</strong> 2,800 CHF with calendar integration and automated reminders.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="pricing">
+                        <button class="faq-question">
+                            Do you offer payment plans?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! We offer flexible payment terms: <strong>50% upfront, 50% on completion</strong> for all projects. For larger projects (10,000+ CHF), we can discuss custom milestone-based payment schedules.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="pricing">
+                        <button class="faq-question">
+                            Are there any hidden fees?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No hidden fees. The prices shown on our pricing page are complete. Third-party costs (domain registration, hosting, ad spend) are separate and paid directly to those providers, not to us.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="pricing">
+                        <button class="faq-question">
+                            Can I combine multiple services?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! Many clients combine services (e.g., Business Website + AI Chatbot + SEO). We'll provide a bundled quote with a discount for multiple services. Contact us for a custom package.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        How long does it take to complete my project?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Starter projects: 2-4 weeks. Professional: 4-8 weeks. Enterprise: 8-12 weeks. Timeline depends on your specific requirements and how quickly you provide feedback.</p>
+                <!-- Category 2: Services & Technical -->
+                <div class="faq-category glass-card" style="padding: 40px; margin-bottom: 40px;">
+                    <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 30px; color: #000; display: flex; align-items: center; gap: 15px;">
+                        <span style="font-size: 2rem;">⚙️</span> Services & Technical
+                    </h3>
+
+                    <div class="faq-item" data-category="services">
+                        <button class="faq-question">
+                            What's the difference between Landing Page and Business Website?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p><strong>Landing Page (500 CHF):</strong> Single page focused on one goal (lead generation, product launch). Perfect for campaigns.<br><br>
+                            <strong>Business Website (2,500 CHF):</strong> Multi-page website with Home, About, Services, Contact, Blog. Complete online presence for your business.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="services">
+                        <button class="faq-question">
+                            How does the AI Chatbot work?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our AI Chatbot (1,800 CHF) uses advanced AI to answer customer questions 24/7. It learns from your business information, handles FAQs, captures leads, and can escalate complex queries to your team. Works on your website, WhatsApp, and social media.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="services">
+                        <button class="faq-question">
+                            What platforms do you build on?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We use the best platform for your needs: WordPress, Shopify, custom code (React/Next.js), Webflow, or custom solutions. We'll recommend the best option during our free consultation based on your goals and budget.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="services">
+                        <button class="faq-question">
+                            Can you redesign my existing website?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! We can redesign, rebuild, or optimize your existing website. We'll analyze what's working and what needs improvement. Pricing is the same as building new - it depends on the scope and features you need.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="services">
+                        <button class="faq-question">
+                            Do you provide hosting and maintenance?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes. We offer hosting and maintenance packages starting at <strong>250 CHF/month</strong>. This includes updates, security monitoring, backups, and technical support. Or you can host independently - you own all the code.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Do I own everything you create?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes. Once the project is paid for, you own all code, designs, content, and assets. Full ownership transferred to you.</p>
+                <!-- Category 3: Project Timeline & Process -->
+                <div class="faq-category glass-card" style="padding: 40px; margin-bottom: 40px;">
+                    <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 30px; color: #000; display: flex; align-items: center; gap: 15px;">
+                        <span style="font-size: 2rem;">⏱️</span> Timeline & Process
+                    </h3>
+
+                    <div class="faq-item" data-category="timeline">
+                        <button class="faq-question">
+                            How long does it take to complete my project?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p><strong>Landing Page:</strong> 3-5 days<br>
+                            <strong>Business Website:</strong> 2-3 weeks<br>
+                            <strong>E-Commerce Store:</strong> 4-6 weeks<br>
+                            <strong>POS/CRM/Booking Systems:</strong> 3-5 weeks<br>
+                            <strong>Mobile App:</strong> 8-12 weeks<br>
+                            Timeline depends on complexity and how quickly you provide feedback.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="timeline">
+                        <button class="faq-question">
+                            What's your development process?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p><strong>1. Discovery Call</strong> - Understand your goals<br>
+                            <strong>2. Proposal & Contract</strong> - Clear scope and pricing<br>
+                            <strong>3. Design Phase</strong> - Mockups for your approval<br>
+                            <strong>4. Development</strong> - Building your solution<br>
+                            <strong>5. Testing & Revisions</strong> - Ensure everything works perfectly<br>
+                            <strong>6. Launch & Training</strong> - Go live + teach you how to use it</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="timeline">
+                        <button class="faq-question">
+                            Can you rush my project?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we offer priority development for urgent projects. Rush fees apply: <strong>+25% for 50% faster delivery, +50% for next-day start</strong>. Contact us to discuss your deadline.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="timeline">
+                        <button class="faq-question">
+                            How many revisions do I get?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Most projects include <strong>2-3 revision rounds</strong>. For larger projects (5,000+ CHF), you get <strong>unlimited revisions</strong> until you're satisfied. We work until it's perfect.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        What if I need changes after launch?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Starter includes 1 month free support. Professional includes 3 months. Enterprise includes 6 months. After that, we offer maintenance plans starting at $297/month or hourly rates.</p>
-                    </div>
-                </div>
+                <!-- Category 4: Support & Guarantees -->
+                <div class="faq-category glass-card" style="padding: 40px; margin-bottom: 40px;">
+                    <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 30px; color: #000; display: flex; align-items: center; gap: 15px;">
+                        <span style="font-size: 2rem;">🛡️</span> Support & Guarantees
+                    </h3>
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Are there any hidden fees?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>No. The prices shown are what you pay. Ad spend budgets (e.g., $2K for ads) are separate and paid directly to platforms like Google/Meta, not to us.</p>
+                    <div class="faq-item" data-category="support">
+                        <button class="faq-question">
+                            Do I own everything you create?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! Once the project is fully paid, you own 100% of the code, designs, content, and all assets. We transfer complete ownership to you. No recurring licensing fees.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Can I upgrade my package later?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Absolutely. You can upgrade anytime and we'll credit what you've already paid toward the higher tier.</p>
+                    <div class="faq-item" data-category="support">
+                        <button class="faq-question">
+                            What if I need changes after launch?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>All projects include <strong>30 days of free support</strong> after launch for bug fixes and minor tweaks. After that, you can hire us hourly (150 CHF/hour) or subscribe to our maintenance plan (250 CHF/month).</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Do you work with businesses outside the US?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes, we work globally. We have clients in Switzerland, Middle East, Europe, and North America. All communication is in English.</p>
+                    <div class="faq-item" data-category="support">
+                        <button class="faq-question">
+                            What if I'm not satisfied with the work?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We work with unlimited revisions until you're happy. If we fundamentally can't deliver what you need (rare), we'll refund your deposit minus any work completed. Your satisfaction is our priority.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        What if I'm not satisfied with the work?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We do unlimited revisions until you're happy. If we fundamentally can't deliver what you need, we'll refund your deposit minus any work completed.</p>
+                    <div class="faq-item" data-category="support">
+                        <button class="faq-question">
+                            Do you work with clients worldwide?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! We're based in Switzerland but work with clients globally across Europe, Middle East, North America, and Asia. All communication is in English. We work in CET timezone (UTC+1).</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Why are you more expensive than other agencies?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Because we deliver results, not just pretty designs. Our clients average 4-6x ROI within 6 months. You're paying for business growth, not just a website or chatbot.</p>
+                    <div class="faq-item" data-category="support">
+                        <button class="faq-question">
+                            Why choose JAFF STUDIO over freelancers or cheaper agencies?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We deliver <strong>business results, not just designs</strong>. Our clients average 4-6x ROI within 6 months. You get: Swiss quality standards, dedicated project manager, modern tech stack, ongoing support, and solutions built to scale. We're investing in your growth.</p>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Do you offer payment plans?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes. We offer 50% upfront, 50% on completion for all packages. For Enterprise, we can discuss custom payment schedules.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        How many revisions do I get?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Starter: 2 revision rounds. Professional: Unlimited revisions. Enterprise: Unlimited everything.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        What happens if I run out of chatbot conversations or social posts?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We'll contact you before you hit limits. You can upgrade your package or purchase add-ons. We never shut off your services without warning.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Can you help with an existing website or do you only build new ones?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We do both. We can redesign/rebuild your existing site or optimize what you already have. Same pricing applies.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        What platforms do you build on?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We use whatever fits your needs best: WordPress, Shopify, custom code (React/Next.js), Webflow, etc. We recommend the best solution during discovery.</p>
-                    </div>
-                </div>
+            <!-- Still Have Questions CTA -->
+            <div style="background: #000; color: #fff; padding: 60px 40px; border-radius: 20px; text-align: center; max-width: 900px; margin: 60px auto 0;">
+                <h3 style="font-size: 2.2rem; font-weight: 900; margin-bottom: 15px;">Still Have Questions?</h3>
+                <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Book a free 30-minute consultation. We'll answer all your questions and recommend the perfect solution for your business.
+                </p>
+                <a href="contact.html" style="display: inline-block; background: #fff; color: #000; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: transform 0.3s;">
+                    Book Free Consultation →
+                </a>
             </div>
         </section>
 
@@ -255,5 +385,86 @@
     </a>
 
     <script defer src="js/scripts.js"></script>
+    <script defer src="js/conversion.js"></script>
+    <script defer src="js/chatbot.js"></script>
+    <script defer src="js/newsletter.js"></script>
+    <script defer src="js/performance.js"></script>
+    <script defer src="js/transitions.js"></script>
+
+    <!-- FAQ Search & Accordion Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('faqSearch');
+            const faqItems = document.querySelectorAll('.faq-item');
+            const faqCategories = document.querySelectorAll('.faq-category');
+
+            // Search functionality
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase().trim();
+
+                    faqItems.forEach(item => {
+                        const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                        const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                        const matches = question.includes(searchTerm) || answer.includes(searchTerm);
+
+                        if (matches || searchTerm === '') {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+
+                    // Hide/show categories based on visible items
+                    faqCategories.forEach(category => {
+                        const visibleItems = category.querySelectorAll('.faq-item[style="display: block;"], .faq-item:not([style*="display"])');
+                        if (searchTerm !== '' && visibleItems.length === 0) {
+                            category.style.display = 'none';
+                        } else {
+                            category.style.display = 'block';
+                        }
+                    });
+                });
+            }
+
+            // Accordion functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const item = this.parentElement;
+                    const answer = item.querySelector('.faq-answer');
+                    const icon = this.querySelector('.faq-icon');
+
+                    // Toggle active state
+                    const isActive = item.classList.contains('active');
+
+                    // Close all other items in the same category
+                    const category = item.closest('.faq-category');
+                    if (category) {
+                        category.querySelectorAll('.faq-item').forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('active');
+                                const otherAnswer = otherItem.querySelector('.faq-answer');
+                                const otherIcon = otherItem.querySelector('.faq-icon');
+                                if (otherAnswer) otherAnswer.style.maxHeight = '0';
+                                if (otherIcon) otherIcon.textContent = '+';
+                            }
+                        });
+                    }
+
+                    // Toggle current item
+                    if (isActive) {
+                        item.classList.remove('active');
+                        answer.style.maxHeight = '0';
+                        icon.textContent = '+';
+                    } else {
+                        item.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        icon.textContent = '−';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
