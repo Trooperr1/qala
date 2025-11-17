@@ -54,9 +54,6 @@ class PageTransitions {
             // Skip if no href
             if (!href) return;
 
-            // Skip external links
-            if (link.hostname !== window.location.hostname) return;
-
             // Skip links that open in new tab
             if (link.target === '_blank') return;
 
@@ -64,7 +61,14 @@ class PageTransitions {
             if (href.startsWith('#')) return;
 
             // Skip special protocols
-            if (href.startsWith('mailto:') || href.startsWith('tel:')) return;
+            if (href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+            // Skip external links (only if it has a protocol and different domain)
+            if (href.startsWith('http://') || href.startsWith('https://')) {
+                if (link.hostname && link.hostname !== window.location.hostname) {
+                    return;
+                }
+            }
 
             // Skip if already transitioning
             if (this.isTransitioning) {
