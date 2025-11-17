@@ -5,7 +5,7 @@
 
 class PageTransitions {
     constructor() {
-        this.transitionDuration = 400; // milliseconds
+        this.transitionDuration = 250; // milliseconds - faster for snappier feel
         this.isTransitioning = false;
         this.init();
     }
@@ -91,13 +91,7 @@ class PageTransitions {
         document.body.classList.remove('page-loaded');
         document.body.classList.add('page-transitioning');
 
-        // Scroll to top smoothly
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-
-        // Navigate after transition
+        // Navigate after transition (removed scroll-to-top for faster navigation)
         setTimeout(() => {
             window.location.href = url;
         }, this.transitionDuration);

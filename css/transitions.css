@@ -10,17 +10,20 @@
 /* Initial state - page is loading */
 body {
     opacity: 0;
-    transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+    will-change: opacity;
 }
 
 /* Page has loaded - fade in */
 body.page-loaded {
     opacity: 1;
+    will-change: auto;
 }
 
 /* Page is transitioning out - fade out */
 body.page-transitioning {
     opacity: 0;
+    will-change: opacity;
 }
 
 /* ============================================================
@@ -30,21 +33,23 @@ body.page-transitioning {
 /* Delay content animations until page is loaded */
 .content-layer {
     opacity: 0;
-    animation: contentFadeIn 0.6s ease-out 0.2s forwards;
+    will-change: opacity, transform;
+    animation: contentFadeIn 0.4s ease-out 0.1s forwards;
 }
 
 body.page-loaded .content-layer {
     opacity: 1;
+    will-change: auto;
 }
 
 @keyframes contentFadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translate3d(0, 10px, 0);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate3d(0, 0, 0);
     }
 }
 
@@ -104,105 +109,36 @@ body.page-transitioning::before {
    STAGGERED ANIMATIONS FOR ELEMENTS
    ============================================================ */
 
-/* Fade in navigation items */
+/* Simplified navigation fade - no stagger for better performance */
 nav .nav-menu li {
-    opacity: 0;
-    animation: navItemFadeIn 0.5s ease-out forwards;
+    opacity: 1;
+    /* Removed animation for better performance */
 }
 
-body.page-loaded nav .nav-menu li:nth-child(1) { animation-delay: 0.1s; }
-body.page-loaded nav .nav-menu li:nth-child(2) { animation-delay: 0.15s; }
-body.page-loaded nav .nav-menu li:nth-child(3) { animation-delay: 0.2s; }
-body.page-loaded nav .nav-menu li:nth-child(4) { animation-delay: 0.25s; }
-body.page-loaded nav .nav-menu li:nth-child(5) { animation-delay: 0.3s; }
-body.page-loaded nav .nav-menu li:nth-child(6) { animation-delay: 0.35s; }
-body.page-loaded nav .nav-menu li:nth-child(7) { animation-delay: 0.4s; }
-
-@keyframes navItemFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Fade in hero section elements */
+/* Simplified hero animations for better performance */
 .hero h1,
-.hero-title {
-    opacity: 0;
-    animation: heroTitleFadeIn 0.8s ease-out 0.3s forwards;
-}
-
-@keyframes heroTitleFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+.hero-title,
 .hero p,
-.hero-subtitle {
-    opacity: 0;
-    animation: heroSubtitleFadeIn 0.8s ease-out 0.5s forwards;
-}
-
-@keyframes heroSubtitleFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+.hero-subtitle,
 .cta-button,
 .hero .cta-button {
-    opacity: 0;
-    animation: ctaFadeIn 0.8s ease-out 0.7s forwards;
-}
-
-@keyframes ctaFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+    opacity: 1;
+    /* Removed complex animations for smoother performance */
 }
 
 /* ============================================================
    SECTION TRANSITIONS (Scroll Reveal)
    ============================================================ */
 
-/* Fade in sections as they come into view */
+/* Simplified sections for instant visibility and better performance */
 section {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    opacity: 1;
+    /* Removed scroll animations for smoother scrolling */
 }
 
 body.page-loaded section {
     opacity: 1;
-    transform: translateY(0);
 }
-
-/* Stagger section animations */
-section:nth-of-type(1) { transition-delay: 0.1s; }
-section:nth-of-type(2) { transition-delay: 0.2s; }
-section:nth-of-type(3) { transition-delay: 0.3s; }
-section:nth-of-type(4) { transition-delay: 0.4s; }
-section:nth-of-type(5) { transition-delay: 0.5s; }
 
 /* ============================================================
    BACK TO TOP BUTTON SMOOTH APPEARANCE
