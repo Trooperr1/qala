@@ -70,13 +70,21 @@ class PageTransitions {
                 }
             }
 
+            // Only apply smooth transition when going to HOME page
+            const isGoingHome = href === 'index.html' || href === '/' || href === './index.html' || href.endsWith('/index.html');
+
+            if (!isGoingHome) {
+                // Not going to home - use normal navigation (no transition)
+                return;
+            }
+
             // Skip if already transitioning
             if (this.isTransitioning) {
                 e.preventDefault();
                 return;
             }
 
-            // Trigger page transition
+            // Trigger page transition (only for home)
             e.preventDefault();
             this.transitionToPage(href);
         });
