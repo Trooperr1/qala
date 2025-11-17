@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>How We Work - JAFF STUDIO Process & Methodology</title>
+    <meta name="description" content="Discover JAFF STUDIO's proven 5-step process for delivering exceptional AI, web, and social media projects on time and on budget.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Google Translate -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Three.js for 3D Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- 3D Canvas Background -->
+    <canvas id="canvas-3d"></canvas>
+
+    <!-- Gradient Overlay -->
+    <div class="gradient-overlay"></div>
+
+    <!-- Floating Orbs -->
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="floating-orb orb-3"></div>
+
+    <!-- Content Layer -->
+    <div class="content-layer">
+        <!-- Navigation -->
+        <nav>
+            <a href="index.html" class="logo">JAFFSTUDIO</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="portfolio.html">PORTFOLIO</a></li>
+                <li><a href="pricing.html">PRICING</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+            <div id="google_translate_element" class="translate-widget"></div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html" class="mobile-menu-link">HOME</a>
+            <a href="about.html" class="mobile-menu-link">ABOUT</a>
+            <a href="services.html" class="mobile-menu-link">SERVICES</a>
+            <a href="portfolio.html" class="mobile-menu-link">PORTFOLIO</a>
+            <a href="pricing.html" class="mobile-menu-link">PRICING</a>
+            <a href="faq.html" class="mobile-menu-link">FAQ</a>
+            <a href="contact.html" class="mobile-menu-link">CONTACT</a>
+        </div>
+
+        <!-- Hero Section -->
+        <section style="padding: 140px 20px 80px; max-width: 900px; margin: 0 auto; text-align: center;">
+            <p class="section-eyebrow" style="color: #666;">OUR METHODOLOGY</p>
+            <h1 style="font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; margin-bottom: 30px; color: #fff;">How We Work</h1>
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); line-height: 1.7; max-width: 700px; margin: 0 auto;">A transparent, battle-tested process that turns your vision into reality. No surprises, no delays, no compromises on quality.</p>
+        </section>
+
+        <!-- Process Overview -->
+        <section style="padding: 60px 20px; max-width: 1200px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; margin-bottom: 80px;">
+                <div>
+                    <div style="font-size: 3rem; font-weight: 900; color: #fff; margin-bottom: 10px;">5</div>
+                    <p style="color: rgba(255,255,255,0.7); text-transform: uppercase; font-size: 0.85rem;">Steps to Success</p>
+                </div>
+                <div>
+                    <div style="font-size: 3rem; font-weight: 900; color: #fff; margin-bottom: 10px;">2-8</div>
+                    <p style="color: rgba(255,255,255,0.7); text-transform: uppercase; font-size: 0.85rem;">Weeks Average</p>
+                </div>
+                <div>
+                    <div style="font-size: 3rem; font-weight: 900; color: #fff; margin-bottom: 10px;">100%</div>
+                    <p style="color: rgba(255,255,255,0.7); text-transform: uppercase; font-size: 0.85rem;">Transparent</p>
+                </div>
+                <div>
+                    <div style="font-size: 3rem; font-weight: 900; color: #fff; margin-bottom: 10px;">0</div>
+                    <p style="color: rgba(255,255,255,0.7); text-transform: uppercase; font-size: 0.85rem;">Hidden Fees</p>
+                </div>
+            </div>
+
+            <!-- Detailed Steps -->
+            <div style="display: grid; gap: 40px;">
+                <!-- Step 1 -->
+                <div class="glass-card" style="padding: 50px;">
+                    <div style="display: flex; gap: 40px; align-items: start; flex-wrap: wrap;">
+                        <div style="background: #fff; color: #000; min-width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 10px 40px rgba(255,255,255,0.2);">1</div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <h3 style="font-size: 2rem; font-weight: 800; margin-bottom: 15px; color: #fff;">Discovery Call</h3>
+                            <p style="color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 25px; font-size: 1.05rem;">We start every project with a free 30-minute consultation. This isn't a sales pitch—it's an honest conversation about your business, goals, challenges, and whether we're the right fit.</p>
+
+                            <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 10px; margin-bottom: 25px;">
+                                <h4 style="color: #fff; font-weight: 700; margin-bottom: 15px;">What We'll Discuss:</h4>
+                                <ul style="color: rgba(255,255,255,0.7); line-height: 1.8; padding-left: 20px;">
+                                    <li>Your business model and target audience</li>
+                                    <li>Current pain points and opportunities</li>
+                                    <li>What success looks like for you (metrics, KPIs)</li>
+                                    <li>Budget range and timeline expectations</li>
+                                    <li>Technical requirements and constraints</li>
+                                </ul>
+                            </div>
+
+                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                <div style="flex: 1; min-width: 200px;">
+                                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 5px;">Duration</p>
+                                    <p style="color: #fff; font-weight: 700;">30 minutes</p>
+                                </div>
+                                <div style="flex: 1; min-width: 200px;">
+                                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 5px;">Format</p>
+                                    <p style="color: #fff; font-weight: 700;">Video call or phone</p>
+                                </div>
+                                <div style="flex: 1; min-width: 200px;">
+                                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 5px;">Cost</p>
+                                    <p style="color: #fff; font-weight: 700;">100% Free</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="glass-card" style="padding: 50px;">
+                    <div style="display: flex; gap: 40px; align-items: start; flex-wrap: wrap;">
+                        <div style="background: #fff; color: #000; min-width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 10px 40px rgba(255,255,255,0.2);">2</div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <h3 style="font-size: 2rem; font-weight: 800; margin-bottom: 15px; color: #fff;">Strategy & Proposal</h3>
+                            <p style="color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 25px; font-size: 1.05rem;">Based on our discussion, we create a detailed proposal that outlines exactly what we'll build, how we'll build it, and what it will cost. No vague estimates—just clear, fixed pricing.</p>
+
+                            <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 10px; margin-bottom: 25px;">
+                                <h4 style="color: #fff; font-weight: 700; margin-bottom: 15px;">Your Proposal Includes:</h4>
+                                <ul style="color: rgba(255,255,255,0.7); line-height: 1.8; padding-left: 20px;">
+                                    <li>Detailed project scope and deliverables</li>
+                                    <li>Week-by-week timeline with milestones</li>
+                                    <li>Fixed pricing breakdown (no hourly rates)</li>
+                                    <li>Technology stack and architecture overview</li>
+                                    <li>Revision policy and support terms</li>
+                                    <li>Payment schedule (typically 50/50 split)</li>
+                                </ul>
+                            </div>
+
+                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                <div style="flex: 1; min-width: 200px;">
+                                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 5px;">Timeline</p>
+                                    <p style="color: #fff; font-weight: 700;">2-3 business days</p>
+                                </div>
+                                <div style="flex: 1; min-width: 200px;">
+                                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 5px;">Revisions</p>
+                                    <p style="color: #fff; font-weight: 700;">Unlimited proposal edits</p>
+                                </div>
+                                <div style="flex: 1; min-width: 200px;">
+                                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 5px;">Obligation</p>
+                                    <p style="color: #fff; font-weight: 700;">None—review risk-free</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="glass-card" style="padding: 50px;">
+                    <div style="display: flex; gap: 40px; align-items: start; flex-wrap: wrap;">
+                        <div style="background: #fff; color: #000; min-width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 10px 40px rgba(255,255,255,0.2);">3</div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <h3 style="font-size: 2rem; font-weight: 800; margin-bottom: 15px; color: #fff;">Design & Development</h3>
+                            <p style="color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 25px; font-size: 1.05rem;">Once you approve the proposal and the deposit is paid, we get to work. You'll have regular check-ins (weekly or bi-weekly) to see progress and provide feedback. No black box—you're part of the process.</p>
+
+                            <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 10px; margin-bottom: 25px;">
+                                <h4 style="color: #fff; font-weight: 700; margin-bottom: 15px;">What Happens:</h4>
+                                <ul style="color: rgba(255,255,255,0.7); line-height: 1.8; padding-left: 20px;">
+                                    <li><strong>Week 1-2:</strong> Wireframes, mockups, technical architecture</li>
+                                    <li><strong>Week 2-4:</strong> Core functionality development and initial designs</li>
+                                    <li><strong>Week 4-6:</strong> Advanced features, integrations, content addition</li>
+                                    <li><strong>Week 6-8:</strong> Polish, performance optimization, mobile testing</li>
+                                </ul>
+                                <p style="color: rgba(255,255,255,0.6); margin-top: 15px; font-size: 0.95rem;"><em>Timeline varies by project complexity. Your proposal has exact dates.</em></p>
+                            </div>
+
+                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                <div style="flex: 1; min-width: 200px;">
+                                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 5px;">Duration</p>
+                                    <p style="color: #fff; font-weight: 700;">2-6 weeks (typical)</p>
+                                </div>
+                                <div style="flex: 1; min-width: 200px;">
+                                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 5px;">Updates</p>
+                                    <p style="color: #fff; font-weight: 700;">Weekly check-ins</p>
+                                </div>
+                                <div style="flex: 1; min-width: 200px;">
+                                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 5px;">Access</p>
+                                    <p style="color: #fff; font-weight: 700;">Live staging environment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="glass-card" style="padding: 50px;">
+                    <div style="display: flex; gap: 40px; align-items: start; flex-wrap: wrap;">
+                        <div style="background: #fff; color: #000; min-width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 10px 40px rgba(255,255,255,0.2);">4</div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <h3 style="font-size: 2rem; font-weight: 800; margin-bottom: 15px; color: #fff;">Testing & Revisions</h3>
+                            <p style="color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 25px; font-size: 1.05rem;">Before launch, we thoroughly test everything and gather your feedback. Your package includes 2-3 revision rounds to ensure every detail is exactly as you want it. This isn't about "fixing bugs"—it's about making it perfect.</p>
+
+                            <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 10px; margin-bottom: 25px;">
+                                <h4 style="color: #fff; font-weight: 700; margin-bottom: 15px;">Our Testing Checklist:</h4>
+                                <ul style="color: rgba(255,255,255,0.7); line-height: 1.8; padding-left: 20px;">
+                                    <li>✓ Cross-browser compatibility (Chrome, Firefox, Safari, Edge)</li>
+                                    <li>✓ Mobile responsiveness on all screen sizes</li>
+                                    <li>✓ Page load speed optimization (<3 seconds)</li>
+                                    <li>✓ Form submissions and integrations</li>
+                                    <li>✓ SEO basics (meta tags, sitemaps, robots.txt)</li>
+                                    <li>✓ Security best practices (HTTPS, input validation)</li>
+                                    <li>✓ Accessibility standards (WCAG 2.1)</li>
+                                </ul>
+                            </div>
+
+                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                <div style="flex: 1; min-width: 200px;">
+                                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 5px;">Timeline</p>
+                                    <p style="color: #fff; font-weight: 700;">3-5 business days</p>
+                                </div>
+                                <div style="flex: 1; min-width: 200px;">
+                                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 5px;">Revisions</p>
+                                    <p style="color: #fff; font-weight: 700;">2-3 rounds included</p>
+                                </div>
+                                <div style="flex: 1; min-width: 200px;">
+                                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 5px;">Feedback</p>
+                                    <p style="color: #fff; font-weight: 700;">Structured review form</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="glass-card" style="padding: 50px;">
+                    <div style="display: flex; gap: 40px; align-items: start; flex-wrap: wrap;">
+                        <div style="background: #fff; color: #000; min-width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 10px 40px rgba(255,255,255,0.2);">5</div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <h3 style="font-size: 2rem; font-weight: 800; margin-bottom: 15px; color: #fff;">Launch & Support</h3>
+                            <p style="color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 25px; font-size: 1.05rem;">We handle the entire launch process—domain setup, SSL certificates, DNS configuration, everything. Then we provide training so you (or your team) can manage day-to-day updates. Plus, 30 days of free support for any issues.</p>
+
+                            <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 10px; margin-bottom: 25px;">
+                                <h4 style="color: #fff; font-weight: 700; margin-bottom: 15px;">Launch Deliverables:</h4>
+                                <ul style="color: rgba(255,255,255,0.7); line-height: 1.8; padding-left: 20px;">
+                                    <li>All source code and files (you own 100%)</li>
+                                    <li>Documentation for managing your project</li>
+                                    <li>Video training session (recorded for reference)</li>
+                                    <li>Analytics setup and initial tracking</li>
+                                    <li>Performance baseline report</li>
+                                    <li>30-day warranty for any bugs or issues</li>
+                                </ul>
+                            </div>
+
+                            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; border-left: 4px solid #fff; margin-bottom: 25px;">
+                                <p style="color: #fff; font-weight: 700; margin-bottom: 10px;">Post-Launch Support</p>
+                                <p style="color: rgba(255,255,255,0.8); line-height: 1.7; font-size: 0.95rem;">After 30 days, we offer flexible maintenance packages ($300-$800/month) for ongoing updates, monitoring, and optimizations. No lock-in—cancel anytime.</p>
+                            </div>
+
+                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                <div style="flex: 1; min-width: 200px;">
+                                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 5px;">Launch Day</p>
+                                    <p style="color: #fff; font-weight: 700;">We handle everything</p>
+                                </div>
+                                <div style="flex: 1; min-width: 200px;">
+                                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 5px;">Training</p>
+                                    <p style="color: #fff; font-weight: 700;">1-hour session + video</p>
+                                </div>
+                                <div style="flex: 1; min-width: 200px;">
+                                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 5px;">Warranty</p>
+                                    <p style="color: #fff; font-weight: 700;">30 days free support</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Principles -->
+        <section class="full-width full-width-white">
+            <p class="section-eyebrow">OUR VALUES</p>
+            <h2 class="section-title">The Principles That Guide Us</h2>
+            <p class="section-subtitle">These aren't just buzzwords—they're how we actually work</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 60px; max-width: 1200px; margin-left: auto; margin-right: auto;">
+                <div style="background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 15px; color: #000;">🎯 Results Over Activity</h3>
+                    <p style="color: #666; line-height: 1.7;">We don't bill hourly because we don't reward busy work. We care about one thing: did it work? If your chatbot doesn't reduce support tickets or your website doesn't generate leads, we haven't done our job.</p>
+                </div>
+
+                <div style="background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 15px; color: #000;">💬 Radical Transparency</h3>
+                    <p style="color: #666; line-height: 1.7;">No jargon, no excuses, no surprises. If something goes wrong, we tell you immediately and explain how we'll fix it. Our proposals show exactly what you're paying for, line by line.</p>
+                </div>
+
+                <div style="background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 15px; color: #000;">⚡ Speed Without Shortcuts</h3>
+                    <p style="color: #666; line-height: 1.7;">Fast doesn't mean sloppy. We move quickly by avoiding unnecessary meetings, bureaucracy, and over-engineering. But we never compromise on security, performance, or code quality.</p>
+                </div>
+
+                <div style="background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 15px; color: #000;">🛡️ Your Success = Our Success</h3>
+                    <p style="color: #666; line-height: 1.7;">We don't do projects and disappear. Many of our best clients started with one small project and now work with us on multiple initiatives because we actually care about their growth.</p>
+                </div>
+
+                <div style="background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 15px; color: #000;">🔧 Technology as a Tool</h3>
+                    <p style="color: #666; line-height: 1.7;">We use AI, modern frameworks, and cutting-edge tools—but only when they actually improve the outcome. We don't chase trends or use fancy tech just to look impressive.</p>
+                </div>
+
+                <div style="background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);">
+                    <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 15px; color: #000;">🤝 True Partnership</h3>
+                    <p style="color: #666; line-height: 1.7;">You're not just a client—you're a partner. We'll tell you when your idea won't work, suggest better approaches, and sometimes push back if we believe there's a smarter path forward.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section style="padding: 100px 20px; max-width: 800px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: #fff; margin-bottom: 30px;">Ready to Start Your Project?</h2>
+            <p style="font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">Book a free discovery call and let's discuss how our process can work for your business.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="btn-primary">Book Discovery Call</a>
+                <a href="services.html" class="btn-secondary">View Services</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <h3 style="font-size: 2rem; font-weight: 900; margin-bottom: 20px; color: #fff;">JAFF STUDIO</h3>
+            <p style="color: rgba(255,255,255,0.6); margin-bottom: 30px;">Elite AI-Powered Creative Agency</p>
+
+            <!-- Social Media Icons -->
+            <!-- ⚠️ IMPORTANT: Replace '#' with your actual social media URLs -->
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;">
+                <a href="#" class="social-icon" title="Instagram" target="_blank" rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon" title="Twitter/X" target="_blank" rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon" title="Behance" target="_blank" rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6.5 14.25c1.66 0 2.5-.83 2.5-2.08 0-1.33-.84-2.17-2.5-2.17H4v4.25h2.5zm13.5-8.25H15v1.5h5v-1.5zM6.25 16.5H4V20h2.25c1.66 0 3-.75 3-2.08 0-1.41-1.34-1.42-3-1.42zm13.75-5c-3.03 0-4.5 2.25-4.5 5.25s1.47 5.25 4.5 5.25c2.34 0 3.84-1.5 4.34-3.75h-2.34c-.17.83-.84 1.41-2 1.41-1.59 0-2.16-1.08-2.16-2.41H22c0-3-1.5-5.75-4-5.75z"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Legal Links -->
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; margin-top: 30px;">
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; font-size: 0.9rem;">
+                    <a href="legal-pages/privacy-policy.html" style="color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s;">Privacy Policy</a>
+                    <span style="color: rgba(255,255,255,0.3);">|</span>
+                    <a href="legal-pages/terms-of-service.html" style="color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s;">Terms of Service</a>
+                    <span style="color: rgba(255,255,255,0.3);">|</span>
+                    <a href="legal-pages/cookie-policy.html" style="color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s;">Cookie Policy</a>
+                    <span style="color: rgba(255,255,255,0.3);">|</span>
+                    <a href="legal-pages/imprint.html" style="color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s;">Imprint</a>
+                    <span style="color: rgba(255,255,255,0.3);">|</span>
+                    <a href="legal-pages/ai-disclaimer.html" style="color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s;">AI Disclaimer</a>
+                </div>
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">&copy; 2025 JAFF STUDIO. All rights reserved.</p>
+                <p style="color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 10px;">Swiss-based AI Agency | Compliant with nFADP</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top">↑</button>
+
+    <!-- WhatsApp Widget -->
+    <!-- ⚠️ IMPORTANT: Replace '1234567890' with your real WhatsApp number (include country code) -->
+    <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-widget">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

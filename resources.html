@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- SEO Meta Tags -->
+    <title>Free Resources & Tools - JAFF STUDIO | Download Templates, Calculators & Guides</title>
+    <meta name="description" content="Access free resources for your business: ROI calculators, project templates, checklists, and expert guides. Download instantly, no credit card required.">
+    <meta name="keywords" content="free business tools, ROI calculator, project templates, marketing checklists, web development guides, AI resources, free downloads">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/resources.html">
+    <meta property="og:title" content="Free Resources & Tools - JAFF STUDIO">
+    <meta property="og:description" content="Access free templates, calculators, and expert guides to grow your business.">
+    <meta property="og:image" content="https://yourwebsite.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://yourwebsite.com/resources.html">
+    <meta name="twitter:title" content="Free Resources & Tools - JAFF STUDIO">
+    <meta name="twitter:description" content="Access free templates, calculators, and expert guides to grow your business.">
+    <meta name="twitter:image" content="https://yourwebsite.com/og-image.jpg">
+
+    <link rel="canonical" href="https://yourwebsite.com/resources.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Google Translate -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Three.js for 3D Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- 3D Canvas Background -->
+    <canvas id="canvas-3d"></canvas>
+
+    <!-- Gradient Overlay -->
+    <div class="gradient-overlay"></div>
+
+    <!-- Floating Orbs -->
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="floating-orb orb-3"></div>
+
+    <!-- Content Layer -->
+    <div class="content-layer">
+        <!-- Navigation -->
+        <nav>
+            <a href="index.html" class="logo">JAFFSTUDIO</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="portfolio.html">PORTFOLIO</a></li>
+                <li><a href="pricing.html">PRICING</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="blog/index.html">BLOG</a></li>
+                <li><a href="resources.html" class="active">RESOURCES</a></li>
+            </ul>
+            <div id="google_translate_element" class="translate-widget"></div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html" class="mobile-menu-link">HOME</a>
+            <a href="about.html" class="mobile-menu-link">ABOUT</a>
+            <a href="services.html" class="mobile-menu-link">SERVICES</a>
+            <a href="portfolio.html" class="mobile-menu-link">PORTFOLIO</a>
+            <a href="pricing.html" class="mobile-menu-link">PRICING</a>
+            <a href="faq.html" class="mobile-menu-link">FAQ</a>
+            <a href="contact.html" class="mobile-menu-link">CONTACT</a>
+            <a href="blog/index.html" class="mobile-menu-link">BLOG</a>
+            <a href="resources.html" class="mobile-menu-link active">RESOURCES</a>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content" style="max-width: 900px;">
+                <h1 class="hero-title" style="font-size: clamp(2.5rem, 8vw, 4.5rem);">Free Tools & Resources</h1>
+                <p class="hero-subtitle" style="font-size: 1.3rem; max-width: 700px; margin: 0 auto;">
+                    Exclusive templates, calculators, and guides to help you make smarter business decisions. 100% free, no credit card required.
+                </p>
+            </div>
+        </section>
+
+        <!-- Interactive Tools Section -->
+        <section style="padding: 80px 20px; max-width: 1200px; margin: 0 auto;">
+            <h2 style="font-size: 2.5rem; font-weight: 900; text-align: center; margin-bottom: 20px; color: white;">Interactive Calculators</h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.7); margin-bottom: 60px; font-size: 1.1rem;">
+                Get instant insights with our free calculators (works right in your browser)
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px;">
+
+                <!-- ROI Calculator -->
+                <div class="glass-card" style="padding: 40px;">
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); width: 70px; height: 70px; border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; font-size: 2rem; color: white;">
+                        📊
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; color: #000;">AI Chatbot ROI Calculator</h3>
+                    <p style="color: #666; margin-bottom: 25px; line-height: 1.7;">
+                        Calculate how much money you could save by automating customer support with an AI chatbot. See real projected savings based on your support volume.
+                    </p>
+                    <button onclick="openCalculator('roi')" class="cta-button" style="width: 100%; background: #000; color: #fff; padding: 15px 30px; border: none; border-radius: 50px; font-weight: 700; cursor: pointer; transition: transform 0.3s ease;">
+                        Open Calculator
+                    </button>
+                </div>
+
+                <!-- Website Cost Estimator -->
+                <div class="glass-card" style="padding: 40px;">
+                    <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); width: 70px; height: 70px; border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; font-size: 2rem; color: white;">
+                        💰
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; color: #000;">Website Cost Estimator</h3>
+                    <p style="color: #666; margin-bottom: 25px; line-height: 1.7;">
+                        Get an instant estimate for your custom website project based on features, complexity, and timeline. Transparent pricing in seconds.
+                    </p>
+                    <button onclick="openCalculator('website')" class="cta-button" style="width: 100%; background: #000; color: #fff; padding: 15px 30px; border: none; border-radius: 50px; font-weight: 700; cursor: pointer; transition: transform 0.3s ease;">
+                        Open Calculator
+                    </button>
+                </div>
+
+                <!-- Page Speed Score -->
+                <div class="glass-card" style="padding: 40px;">
+                    <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); width: 70px; height: 70px; border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; font-size: 2rem; color: white;">
+                        ⚡
+                    </div>
+                    <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; color: #000;">Website Speed Checker</h3>
+                    <p style="color: #666; margin-bottom: 25px; line-height: 1.7;">
+                        Test your website's performance and get a detailed report on Core Web Vitals. See how your site stacks up against competitors.
+                    </p>
+                    <button onclick="openCalculator('speed')" class="cta-button" style="width: 100%; background: #000; color: #fff; padding: 15px 30px; border: none; border-radius: 50px; font-weight: 700; cursor: pointer; transition: transform 0.3s ease;">
+                        Test Speed
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Downloadable Resources Section -->
+        <section style="padding: 80px 20px; max-width: 1200px; margin: 0 auto; background: rgba(255,255,255,0.02); border-radius: 20px;">
+            <h2 style="font-size: 2.5rem; font-weight: 900; text-align: center; margin-bottom: 20px; color: white;">Free Downloads</h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.7); margin-bottom: 60px; font-size: 1.1rem;">
+                Templates, checklists, and guides curated by our experts
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+
+                <!-- Download Item 1 -->
+                <div class="glass-card" style="padding: 35px; display: flex; flex-direction: column;">
+                    <div style="display: flex; align-items: start; gap: 20px; margin-bottom: 20px;">
+                        <div style="background: #000; color: white; width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
+                            📋
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; color: #000;">Website Launch Checklist</h3>
+                            <p style="color: #999; font-size: 0.9rem;">PDF • 3 pages</p>
+                        </div>
+                    </div>
+                    <p style="color: #666; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                        Complete pre-launch checklist covering SEO, performance, legal compliance, and analytics setup. Don't launch without it!
+                    </p>
+                    <button onclick="downloadResource('launch-checklist')" class="cta-button-outline" style="width: 100%; background: transparent; color: #000; padding: 12px 25px; border: 2px solid #000; border-radius: 50px; font-weight: 700; cursor: pointer; transition: all 0.3s ease;">
+                        Download Free →
+                    </button>
+                </div>
+
+                <!-- Download Item 2 -->
+                <div class="glass-card" style="padding: 35px; display: flex; flex-direction: column;">
+                    <div style="display: flex; align-items: start; gap: 20px; margin-bottom: 20px;">
+                        <div style="background: #000; color: white; width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
+                            🎯
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; color: #000;">Social Media Content Calendar</h3>
+                            <p style="color: #999; font-size: 0.9rem;">Google Sheets Template</p>
+                        </div>
+                    </div>
+                    <p style="color: #666; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                        Plan 30 days of social media content in under an hour. Includes post templates, hashtag strategies, and tracking metrics.
+                    </p>
+                    <button onclick="downloadResource('content-calendar')" class="cta-button-outline" style="width: 100%; background: transparent; color: #000; padding: 12px 25px; border: 2px solid #000; border-radius: 50px; font-weight: 700; cursor: pointer; transition: all 0.3s ease;">
+                        Download Free →
+                    </button>
+                </div>
+
+                <!-- Download Item 3 -->
+                <div class="glass-card" style="padding: 35px; display: flex; flex-direction: column;">
+                    <div style="display: flex; align-items: start; gap: 20px; margin-bottom: 20px;">
+                        <div style="background: #000; color: white; width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
+                            🤖
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; color: #000;">AI Chatbot Buyer's Guide</h3>
+                            <p style="color: #999; font-size: 0.9rem;">PDF • 15 pages</p>
+                        </div>
+                    </div>
+                    <p style="color: #666; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                        Comprehensive guide to choosing the right AI chatbot for your business. Includes feature comparison matrix and vendor checklist.
+                    </p>
+                    <button onclick="downloadResource('ai-guide')" class="cta-button-outline" style="width: 100%; background: transparent; color: #000; padding: 12px 25px; border: 2px solid #000; border-radius: 50px; font-weight: 700; cursor: pointer; transition: all 0.3s ease;">
+                        Download Free →
+                    </button>
+                </div>
+
+                <!-- Download Item 4 -->
+                <div class="glass-card" style="padding: 35px; display: flex; flex-direction: column;">
+                    <div style="display: flex; align-items: start; gap: 20px; margin-bottom: 20px;">
+                        <div style="background: #000; color: white; width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
+                            💡
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; color: #000;">Web Performance Audit Template</h3>
+                            <p style="color: #999; font-size: 0.9rem;">Excel Spreadsheet</p>
+                        </div>
+                    </div>
+                    <p style="color: #666; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                        Professional website audit template covering Core Web Vitals, accessibility, SEO, and security. Used by our team internally.
+                    </p>
+                    <button onclick="downloadResource('audit-template')" class="cta-button-outline" style="width: 100%; background: transparent; color: #000; padding: 12px 25px; border: 2px solid #000; border-radius: 50px; font-weight: 700; cursor: pointer; transition: all 0.3s ease;">
+                        Download Free →
+                    </button>
+                </div>
+
+                <!-- Download Item 5 -->
+                <div class="glass-card" style="padding: 35px; display: flex; flex-direction: column;">
+                    <div style="display: flex; align-items: start; gap: 20px; margin-bottom: 20px;">
+                        <div style="background: #000; color: white; width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
+                            ✉️
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; color: #000;">Email Marketing Swipe File</h3>
+                            <p style="color: #999; font-size: 0.9rem;">PDF • 20 pages</p>
+                        </div>
+                    </div>
+                    <p style="color: #666; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                        25 high-converting email templates for launches, promotions, nurture sequences, and re-engagement campaigns. Copy, customize, send.
+                    </p>
+                    <button onclick="downloadResource('email-swipe')" class="cta-button-outline" style="width: 100%; background: transparent; color: #000; padding: 12px 25px; border: 2px solid #000; border-radius: 50px; font-weight: 700; cursor: pointer; transition: all 0.3s ease;">
+                        Download Free →
+                    </button>
+                </div>
+
+                <!-- Download Item 6 -->
+                <div class="glass-card" style="padding: 35px; display: flex; flex-direction: column;">
+                    <div style="display: flex; align-items: start; gap: 20px; margin-bottom: 20px;">
+                        <div style="background: #000; color: white; width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
+                            📈
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; color: #000;">SEO Keyword Research Template</h3>
+                            <p style="color: #999; font-size: 0.9rem;">Google Sheets Template</p>
+                        </div>
+                    </div>
+                    <p style="color: #666; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;">
+                        Complete keyword research framework with competitor analysis, search volume tracking, and content gap identification.
+                    </p>
+                    <button onclick="downloadResource('seo-template')" class="cta-button-outline" style="width: 100%; background: transparent; color: #000; padding: 12px 25px; border: 2px solid #000; border-radius: 50px; font-weight: 700; cursor: pointer; transition: all 0.3s ease;">
+                        Download Free →
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Learning Resources Section -->
+        <section style="padding: 80px 20px; max-width: 1200px; margin: 0 auto;">
+            <h2 style="font-size: 2.5rem; font-weight: 900; text-align: center; margin-bottom: 20px; color: white;">Expert Guides & Articles</h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.7); margin-bottom: 60px; font-size: 1.1rem;">
+                In-depth knowledge from our blog and resource library
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+
+                <a href="blog/how-to-choose-ai-chatbot-for-business.html" class="glass-card" style="padding: 30px; text-decoration: none; transition: transform 0.3s ease; display: block;">
+                    <div style="font-size: 2.5rem; margin-bottom: 15px;">🤖</div>
+                    <h3 style="font-size: 1.3rem; font-weight: 700; color: #000; margin-bottom: 10px;">How to Choose an AI Chatbot</h3>
+                    <p style="color: #666; line-height: 1.6; margin-bottom: 15px;">Complete buyer's guide with feature comparison and ROI framework.</p>
+                    <span style="color: #000; font-weight: 600;">Read Article →</span>
+                </a>
+
+                <a href="blog/web-development-trends-2025.html" class="glass-card" style="padding: 30px; text-decoration: none; transition: transform 0.3s ease; display: block;">
+                    <div style="font-size: 2.5rem; margin-bottom: 15px;">💻</div>
+                    <h3 style="font-size: 1.3rem; font-weight: 700; color: #000; margin-bottom: 10px;">Web Development Trends 2025</h3>
+                    <p style="color: #666; line-height: 1.6; margin-bottom: 15px;">Latest technologies and approaches defining modern web development.</p>
+                    <span style="color: #000; font-weight: 600;">Read Article →</span>
+                </a>
+
+                <a href="how-we-work.html" class="glass-card" style="padding: 30px; text-decoration: none; transition: transform 0.3s ease; display: block;">
+                    <div style="font-size: 2.5rem; margin-bottom: 15px;">⚙️</div>
+                    <h3 style="font-size: 1.3rem; font-weight: 700; color: #000; margin-bottom: 10px;">Our Process & Principles</h3>
+                    <p style="color: #666; line-height: 1.6; margin-bottom: 15px;">Learn how we execute projects from discovery to launch.</p>
+                    <span style="color: #000; font-weight: 600;">Learn More →</span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section style="padding: 80px 20px; max-width: 900px; margin: 0 auto;">
+            <div class="glass-card" style="padding: 60px 40px; text-align: center; background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7)); color: white;">
+                <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;">Need Personalized Help?</h2>
+                <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; line-height: 1.7;">
+                    These resources are great starting points, but every business is unique. Book a free consultation to get tailored recommendations for your specific situation.
+                </p>
+                <a href="contact.html" class="cta-button" style="display: inline-block; background: white; color: black; padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: transform 0.3s ease;">
+                    Schedule Free Consultation
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>JAFF STUDIO</h3>
+                    <p>Elite creative agency delivering AI-powered solutions, premium web development, and strategic social media management.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="blog/index.html">Blog</a>
+                    <a href="resources.html">Resources</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="legal-pages/privacy-policy.html">Privacy Policy</a>
+                    <a href="legal-pages/terms-of-service.html">Terms of Service</a>
+                    <a href="legal-pages/cookie-policy.html">Cookie Policy</a>
+                    <a href="legal-pages/imprint.html">Imprint</a>
+                    <a href="legal-pages/ai-disclaimer.html">AI Disclaimer</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <!-- ⚠️ IMPORTANT: Replace with your real contact info -->
+                    <a href="mailto:contact@jaffstudio.com">contact@jaffstudio.com</a>
+                    <a href="https://wa.me/1234567890">WhatsApp</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 JAFF STUDIO. All rights reserved. Based in Switzerland 🇨🇭</p>
+            </div>
+        </footer>
+
+        <!-- Back to Top Button -->
+        <button class="back-to-top">↑</button>
+    </div>
+
+    <!-- Calculator Modal (Hidden by default) -->
+    <div id="calculatorModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 10000; align-items: center; justify-content: center; padding: 20px;">
+        <div class="glass-card" style="max-width: 600px; width: 100%; padding: 50px; position: relative; max-height: 90vh; overflow-y: auto;">
+            <button onclick="closeCalculator()" style="position: absolute; top: 20px; right: 20px; background: #000; color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center;">×</button>
+            <div id="calculatorContent"></div>
+        </div>
+    </div>
+
+    <!-- Download Modal (Hidden by default) -->
+    <div id="downloadModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 10000; align-items: center; justify-content: center; padding: 20px;">
+        <div class="glass-card" style="max-width: 500px; width: 100%; padding: 50px; position: relative;">
+            <button onclick="closeDownload()" style="position: absolute; top: 20px; right: 20px; background: #000; color: white; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center;">×</button>
+
+            <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 20px; color: #000;">Get Your Free Resource</h3>
+            <p style="color: #666; margin-bottom: 25px; line-height: 1.7;">Enter your email to download instantly. We'll also send you occasional tips (unsubscribe anytime).</p>
+
+            <!-- ⚠️ IMPORTANT: Replace action URL with your email service (Mailchimp, ConvertKit, etc.) -->
+            <form id="downloadForm" style="display: grid; gap: 15px;">
+                <input type="text" placeholder="Your Name" required style="padding: 15px 20px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem;">
+                <input type="email" placeholder="Your Email" required style="padding: 15px 20px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem;">
+                <input type="hidden" id="resourceType" name="resource" value="">
+                <button type="submit" class="cta-button" style="background: #000; color: #fff; padding: 15px 30px; border: none; border-radius: 50px; font-weight: 700; cursor: pointer; transition: transform 0.3s ease;">
+                    Download Now
+                </button>
+                <p style="font-size: 0.85rem; color: #999; text-align: center; margin: 0;">
+                    We respect your privacy. Read our <a href="legal-pages/privacy-policy.html" style="color: #000; text-decoration: underline;">Privacy Policy</a>.
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-button-outline:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-3px);
+        }
+
+        #calculatorModal,
+        #downloadModal {
+            backdrop-filter: blur(10px);
+        }
+    </style>
+
+    <script>
+        // Calculator Functions
+        function openCalculator(type) {
+            const modal = document.getElementById('calculatorModal');
+            const content = document.getElementById('calculatorContent');
+
+            let calculatorHTML = '';
+
+            if (type === 'roi') {
+                calculatorHTML = `
+                    <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 20px; color: #000;">AI Chatbot ROI Calculator</h3>
+                    <p style="color: #666; margin-bottom: 30px;">Calculate your potential savings</p>
+
+                    <div style="display: grid; gap: 20px; margin-bottom: 30px;">
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #000;">Monthly Support Tickets</label>
+                            <input type="number" id="tickets" placeholder="e.g., 500" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #000;">Avg. Resolution Time (minutes)</label>
+                            <input type="number" id="avgTime" placeholder="e.g., 15" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #000;">Support Agent Hourly Rate ($)</label>
+                            <input type="number" id="hourlyRate" placeholder="e.g., 25" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        <button onclick="calculateROI()" class="cta-button" style="background: #000; color: #fff; padding: 15px 30px; border: none; border-radius: 50px; font-weight: 700; cursor: pointer;">Calculate Savings</button>
+                    </div>
+
+                    <div id="roiResult" style="display: none; background: #f0f9ff; padding: 25px; border-radius: 10px; border-left: 4px solid #0284c7;">
+                        <h4 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 15px; color: #000;">Your Potential Savings</h4>
+                        <div id="roiOutput"></div>
+                    </div>
+                `;
+            } else if (type === 'website') {
+                calculatorHTML = `
+                    <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 20px; color: #000;">Website Cost Estimator</h3>
+                    <p style="color: #666; margin-bottom: 30px;">Get an instant project estimate</p>
+
+                    <div style="display: grid; gap: 20px; margin-bottom: 30px;">
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #000;">Website Type</label>
+                            <select id="websiteType" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem;">
+                                <option value="landing">Landing Page ($2,500 - $5,000)</option>
+                                <option value="business">Business Website ($5,000 - $15,000)</option>
+                                <option value="ecommerce">E-commerce ($15,000 - $50,000)</option>
+                                <option value="custom">Custom Application ($50,000+)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #000;">Number of Pages</label>
+                            <input type="number" id="pageCount" placeholder="e.g., 10" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #000;">Additional Features</label>
+                            <div style="display: grid; gap: 10px;">
+                                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                    <input type="checkbox" class="websiteFeature" value="1500"> AI Chatbot Integration (+$1,500)
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                    <input type="checkbox" class="websiteFeature" value="2000"> Custom CMS (+$2,000)
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                    <input type="checkbox" class="websiteFeature" value="1000"> Payment Integration (+$1,000)
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                    <input type="checkbox" class="websiteFeature" value="800"> User Dashboard (+$800)
+                                </label>
+                            </div>
+                        </div>
+                        <button onclick="calculateWebsiteCost()" class="cta-button" style="background: #000; color: #fff; padding: 15px 30px; border: none; border-radius: 50px; font-weight: 700; cursor: pointer;">Calculate Cost</button>
+                    </div>
+
+                    <div id="websiteResult" style="display: none; background: #f0f9ff; padding: 25px; border-radius: 10px; border-left: 4px solid #0284c7;">
+                        <div id="websiteOutput"></div>
+                    </div>
+                `;
+            } else if (type === 'speed') {
+                calculatorHTML = `
+                    <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 20px; color: #000;">Website Speed Checker</h3>
+                    <p style="color: #666; margin-bottom: 30px;">Test your site's performance</p>
+
+                    <div style="display: grid; gap: 20px; margin-bottom: 30px;">
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #000;">Website URL</label>
+                            <input type="url" id="websiteURL" placeholder="https://example.com" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        <button onclick="testSpeed()" class="cta-button" style="background: #000; color: #fff; padding: 15px 30px; border: none; border-radius: 50px; font-weight: 700; cursor: pointer;">Test Speed</button>
+                    </div>
+
+                    <div id="speedResult" style="display: none; background: #f0f9ff; padding: 25px; border-radius: 10px;">
+                        <p style="color: #666; text-align: center; margin: 0;">This tool uses Google PageSpeed Insights. Click below to run the test:</p>
+                        <div style="margin-top: 20px; text-align: center;">
+                            <a id="pagespeedLink" href="#" target="_blank" class="cta-button" style="display: inline-block; background: #000; color: #fff; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 700;">Open PageSpeed Insights →</a>
+                        </div>
+                    </div>
+                `;
+            }
+
+            content.innerHTML = calculatorHTML;
+            modal.style.display = 'flex';
+        }
+
+        function closeCalculator() {
+            document.getElementById('calculatorModal').style.display = 'none';
+        }
+
+        function calculateROI() {
+            const tickets = parseInt(document.getElementById('tickets').value);
+            const avgTime = parseInt(document.getElementById('avgTime').value);
+            const hourlyRate = parseInt(document.getElementById('hourlyRate').value);
+
+            if (!tickets || !avgTime || !hourlyRate) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            const hoursPerMonth = (tickets * avgTime) / 60;
+            const currentCost = hoursPerMonth * hourlyRate;
+            const automationRate = 0.6; // 60% of tickets can be automated
+            const monthlySavings = currentCost * automationRate;
+            const annualSavings = monthlySavings * 12;
+
+            const result = document.getElementById('roiResult');
+            const output = document.getElementById('roiOutput');
+
+            output.innerHTML = `
+                <div style="display: grid; gap: 15px;">
+                    <div>
+                        <p style="color: #666; margin-bottom: 5px;">Current Monthly Support Cost</p>
+                        <p style="font-size: 1.8rem; font-weight: 900; color: #000;">$${currentCost.toLocaleString()}</p>
+                    </div>
+                    <div>
+                        <p style="color: #666; margin-bottom: 5px;">Potential Monthly Savings (60% automation)</p>
+                        <p style="font-size: 1.8rem; font-weight: 900; color: #16a34a;">$${Math.round(monthlySavings).toLocaleString()}</p>
+                    </div>
+                    <div>
+                        <p style="color: #666; margin-bottom: 5px;">Annual Savings</p>
+                        <p style="font-size: 2.2rem; font-weight: 900; color: #000;">$${Math.round(annualSavings).toLocaleString()}</p>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.05); padding: 15px; border-radius: 8px; margin-top: 10px;">
+                        <p style="font-size: 0.9rem; color: #666; margin: 0;">💡 Based on industry averages, AI chatbots can automate 60% of customer support tickets. Your actual savings may vary.</p>
+                    </div>
+                    <a href="contact.html" class="cta-button" style="display: inline-block; background: #000; color: #fff; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 700; text-align: center; margin-top: 15px;">Get a Custom Quote →</a>
+                </div>
+            `;
+
+            result.style.display = 'block';
+        }
+
+        function calculateWebsiteCost() {
+            const type = document.getElementById('websiteType').value;
+            const pageCount = parseInt(document.getElementById('pageCount').value) || 5;
+            const features = document.querySelectorAll('.websiteFeature:checked');
+
+            let baseCost = 0;
+            let typeName = '';
+
+            if (type === 'landing') { baseCost = 3500; typeName = 'Landing Page'; }
+            else if (type === 'business') { baseCost = 10000; typeName = 'Business Website'; }
+            else if (type === 'ecommerce') { baseCost = 30000; typeName = 'E-commerce Site'; }
+            else if (type === 'custom') { baseCost = 75000; typeName = 'Custom Application'; }
+
+            const pageCost = Math.max(0, pageCount - 5) * 200;
+
+            let featureCost = 0;
+            features.forEach(feature => {
+                featureCost += parseInt(feature.value);
+            });
+
+            const totalCost = baseCost + pageCost + featureCost;
+            const lowRange = totalCost * 0.85;
+            const highRange = totalCost * 1.15;
+
+            const result = document.getElementById('websiteResult');
+            const output = document.getElementById('websiteOutput');
+
+            output.innerHTML = `
+                <div style="text-align: center;">
+                    <p style="color: #666; margin-bottom: 10px;">${typeName} with ${pageCount} pages</p>
+                    <p style="font-size: 2.5rem; font-weight: 900; color: #000; margin-bottom: 5px;">$${Math.round(totalCost).toLocaleString()}</p>
+                    <p style="color: #999; font-size: 0.9rem; margin-bottom: 25px;">Typical range: $${Math.round(lowRange).toLocaleString()} - $${Math.round(highRange).toLocaleString()}</p>
+                    <div style="background: rgba(0,0,0,0.05); padding: 20px; border-radius: 8px; margin-bottom: 20px; text-align: left;">
+                        <p style="font-size: 0.95rem; color: #666; margin-bottom: 10px;"><strong>Included:</strong></p>
+                        <ul style="color: #666; font-size: 0.9rem; margin: 0; padding-left: 20px;">
+                            <li>Responsive design for all devices</li>
+                            <li>SEO optimization</li>
+                            <li>Performance optimization</li>
+                            <li>Contact forms</li>
+                            <li>Google Analytics setup</li>
+                            ${features.length > 0 ? '<li>' + Array.from(features).map(f => f.nextSibling.textContent.split('(+')[0]).join('</li><li>') + '</li>' : ''}
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="cta-button" style="display: inline-block; background: #000; color: #fff; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 700;">Get Accurate Quote →</a>
+                </div>
+            `;
+
+            result.style.display = 'block';
+        }
+
+        function testSpeed() {
+            const url = document.getElementById('websiteURL').value;
+            if (!url) {
+                alert('Please enter a website URL');
+                return;
+            }
+
+            const pagespeedURL = 'https://pagespeed.web.dev/report?url=' + encodeURIComponent(url);
+            document.getElementById('pagespeedLink').href = pagespeedURL;
+            document.getElementById('speedResult').style.display = 'block';
+        }
+
+        // Download Functions
+        function downloadResource(resourceType) {
+            const modal = document.getElementById('downloadModal');
+            document.getElementById('resourceType').value = resourceType;
+            modal.style.display = 'flex';
+        }
+
+        function closeDownload() {
+            document.getElementById('downloadModal').style.display = 'none';
+        }
+
+        // Form submission (you'll need to connect this to your email service)
+        document.getElementById('downloadForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! In a real implementation, this would send the resource to your email. For now, please set up an email service like ConvertKit or Mailchimp.');
+            closeDownload();
+        });
+
+        // Close modals on outside click
+        window.onclick = function(event) {
+            const calcModal = document.getElementById('calculatorModal');
+            const dlModal = document.getElementById('downloadModal');
+            if (event.target === calcModal) {
+                closeCalculator();
+            }
+            if (event.target === dlModal) {
+                closeDownload();
+            }
+        }
+    </script>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
