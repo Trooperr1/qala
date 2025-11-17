@@ -33,6 +33,11 @@
     <!-- Gradient Overlay -->
     <div class="gradient-overlay"></div>
 
+    <!-- Floating Orbs -->
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="floating-orb orb-3"></div>
+
     <!-- Content Layer -->
     <div class="content-layer">
         <!-- Navigation -->
@@ -69,99 +74,227 @@
         </div>
 
         <!-- Contact Section -->
-        <section style="margin-top: 80px;">
-            <p class="section-eyebrow" style="color: #666;">GET IN TOUCH</p>
-            <h2 class="section-title">Let's Create Together</h2>
-            <p class="section-subtitle">Ready to transform your brand? Fill out the form below and let's discuss your project.</p>
-
-            <div class="contact-form-container">
-                <form id="contactForm" action="https://formsubmit.co/contact@jaffstudio.com" method="POST">
-                    <!-- FormSubmit Configuration -->
-                    <input type="hidden" name="_subject" value="New Contact Form Submission - JAFF STUDIO">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-                    <!-- ⚠️ IMPORTANT: Replace 'jaffstudio.com' with your actual domain if different -->
-                    <input type="hidden" name="_next" value="https://jaffstudio.com/thank-you.html">
-                    <input type="text" name="_honey" style="display:none">
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Your Name *</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                class="form-input"
-                                placeholder="John Doe"
-                                required
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label for="company" class="form-label">Company</label>
-                            <input
-                                type="text"
-                                id="company"
-                                name="company"
-                                class="form-input"
-                                placeholder="Your Company"
-                            />
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email Address *</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                class="form-input"
-                                placeholder="john@example.com"
-                                required
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input
-                                type="tel"
-                                id="phone"
-                                name="phone"
-                                class="form-input"
-                                placeholder="+1 234 567 8900"
-                            />
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="service" class="form-label">Service Interested In *</label>
-                        <select id="service" name="service" class="form-select" required>
-                            <option value="">Select a service...</option>
-                            <option value="AI Solutions">AI Solutions</option>
-                            <option value="Website Development">Website Development</option>
-                            <option value="Social Media Management">Social Media Management</option>
-                            <option value="Full Package">Full Package (Multiple Services)</option>
-                            <option value="Other">Other / Consultation</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message" class="form-label">Your Message *</label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            class="form-textarea"
-                            placeholder="Tell us about your project, goals, and timeline..."
-                            required
-                        ></textarea>
-                    </div>
-
-                    <button type="submit" class="form-submit-btn">Send Message</button>
-
-                    <div id="successMessage" class="form-success-message">
-                        ✓ Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
-                    </div>
-                </form>
+        <section style="margin-top: 80px; padding-bottom: 100px;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <p class="section-eyebrow" style="color: #666;">GET IN TOUCH</p>
+                <h2 class="section-title">Let's Create Together</h2>
+                <p class="section-subtitle">Ready to transform your brand? Reach out and let's discuss your project.</p>
             </div>
+
+            <!-- Two-Column Layout -->
+            <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px; max-width: 1400px; margin: 0 auto;">
+
+                <!-- Left Column: Contact Information -->
+                <div>
+                    <!-- Response Time Badge -->
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 15px; text-align: center; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(102,126,234,0.3);">
+                        <div style="font-size: 2rem; margin-bottom: 5px;">⚡</div>
+                        <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 5px;">24-Hour Response</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">We reply to every inquiry within one business day</div>
+                    </div>
+
+                    <!-- Contact Info Cards -->
+                    <div class="glass-card" style="padding: 30px; margin-bottom: 20px;">
+                        <div style="display: flex; align-items: start; gap: 20px;">
+                            <div style="font-size: 2rem;">📧</div>
+                            <div>
+                                <h4 style="font-weight: 700; margin-bottom: 8px; color: #000;">Email Us</h4>
+                                <a href="mailto:contact@jaffstudio.com" style="color: #667eea; text-decoration: none; font-weight: 600;">contact@jaffstudio.com</a>
+                                <p style="color: #999; font-size: 0.9rem; margin-top: 5px;">For detailed inquiries</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card" style="padding: 30px; margin-bottom: 20px;">
+                        <div style="display: flex; align-items: start; gap: 20px;">
+                            <div style="font-size: 2rem;">💬</div>
+                            <div>
+                                <h4 style="font-weight: 700; margin-bottom: 8px; color: #000;">WhatsApp</h4>
+                                <a href="https://wa.me/1234567890" style="color: #667eea; text-decoration: none; font-weight: 600;">+1 234 567 8900</a>
+                                <p style="color: #999; font-size: 0.9rem; margin-top: 5px;">Quick questions & urgent matters</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card" style="padding: 30px; margin-bottom: 20px;">
+                        <div style="display: flex; align-items: start; gap: 20px;">
+                            <div style="font-size: 2rem;">🇨🇭</div>
+                            <div>
+                                <h4 style="font-weight: 700; margin-bottom: 8px; color: #000;">Location</h4>
+                                <p style="color: #666; margin-bottom: 5px; font-weight: 600;">Based in Switzerland</p>
+                                <p style="color: #999; font-size: 0.9rem;">CET Time Zone (UTC+1)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card" style="padding: 30px;">
+                        <div style="display: flex; align-items: start; gap: 20px;">
+                            <div style="font-size: 2rem;">🕐</div>
+                            <div>
+                                <h4 style="font-weight: 700; margin-bottom: 8px; color: #000;">Business Hours</h4>
+                                <p style="color: #666; margin-bottom: 3px;">Mon - Fri: 9:00 - 18:00</p>
+                                <p style="color: #999; font-size: 0.9rem;">Weekend: Email only</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Free Consultation Badge -->
+                    <div style="background: #000; color: #fff; padding: 20px; border-radius: 15px; text-align: center; margin-top: 30px;">
+                        <div style="font-size: 1.8rem; margin-bottom: 5px;">🎁</div>
+                        <div style="font-weight: 700; font-size: 1rem;">Free 30-Min Consultation</div>
+                        <div style="font-size: 0.85rem; opacity: 0.8; margin-top: 5px;">No strings attached</div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Contact Form -->
+                <div class="glass-card" style="padding: 40px;">
+                    <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 25px; color: #000;">Send Us a Message</h3>
+
+                    <form id="contactForm" action="https://formsubmit.co/contact@jaffstudio.com" method="POST">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_subject" value="New Contact Form Submission - JAFF STUDIO">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <!-- ⚠️ IMPORTANT: Replace 'jaffstudio.com' with your actual domain if different -->
+                        <input type="hidden" name="_next" value="https://jaffstudio.com/thank-you.html">
+                        <input type="text" name="_honey" style="display:none">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Your Name *</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    class="form-input"
+                                    placeholder="John Doe"
+                                    required
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="company" class="form-label">Company</label>
+                                <input
+                                    type="text"
+                                    id="company"
+                                    name="company"
+                                    class="form-input"
+                                    placeholder="Your Company"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    class="form-input"
+                                    placeholder="john@example.com"
+                                    required
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    class="form-input"
+                                    placeholder="+41 12 345 6789"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service" class="form-label">Service Interested In *</label>
+                            <select id="service" name="service" class="form-select" required>
+                                <option value="">Select a service...</option>
+                                <optgroup label="Web Solutions">
+                                    <option value="Landing Page">Landing Page (500 CHF)</option>
+                                    <option value="Business Website">Business Website (2,500 CHF)</option>
+                                    <option value="E-Commerce Store">E-Commerce Store (4,500 CHF)</option>
+                                </optgroup>
+                                <optgroup label="Business Systems">
+                                    <option value="POS System">POS System (3,200 CHF)</option>
+                                    <option value="CRM System">CRM System (3,800 CHF)</option>
+                                    <option value="Booking System">Booking System (2,800 CHF)</option>
+                                </optgroup>
+                                <optgroup label="Advanced Solutions">
+                                    <option value="Mobile App">Mobile App Development (8,500 CHF)</option>
+                                    <option value="AI Chatbot">AI Chatbot Integration (1,800 CHF)</option>
+                                    <option value="Custom Software">Custom Software Solution (10,000+ CHF)</option>
+                                </optgroup>
+                                <optgroup label="Other Services">
+                                    <option value="Social Media Management">Social Media Management</option>
+                                    <option value="SEO Optimization">SEO Optimization</option>
+                                    <option value="Full Package">Full Package (Multiple Services)</option>
+                                    <option value="Consultation">Free Consultation</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="budget" class="form-label">Project Budget *</label>
+                                <select id="budget" name="budget" class="form-select" required>
+                                    <option value="">Select budget range...</option>
+                                    <option value="Under 1,000 CHF">Under 1,000 CHF</option>
+                                    <option value="1,000 - 3,000 CHF">1,000 - 3,000 CHF</option>
+                                    <option value="3,000 - 5,000 CHF">3,000 - 5,000 CHF</option>
+                                    <option value="5,000 - 10,000 CHF">5,000 - 10,000 CHF</option>
+                                    <option value="10,000 - 20,000 CHF">10,000 - 20,000 CHF</option>
+                                    <option value="20,000+ CHF">20,000+ CHF</option>
+                                    <option value="Not sure yet">Not sure yet</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="timeline" class="form-label">Timeline *</label>
+                                <select id="timeline" name="timeline" class="form-select" required>
+                                    <option value="">Select timeline...</option>
+                                    <option value="Urgent (1-2 weeks)">Urgent (1-2 weeks)</option>
+                                    <option value="Soon (2-4 weeks)">Soon (2-4 weeks)</option>
+                                    <option value="Flexible (1-3 months)">Flexible (1-3 months)</option>
+                                    <option value="Planning (3+ months)">Planning (3+ months)</option>
+                                    <option value="Just exploring">Just exploring</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Your Message *</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                class="form-textarea"
+                                placeholder="Tell us about your project, goals, challenges, and any specific requirements..."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit-btn">Send Message</button>
+
+                        <div id="successMessage" class="form-success-message">
+                            ✓ Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+                        </div>
+
+                        <p style="text-align: center; color: #999; font-size: 0.85rem; margin-top: 20px;">
+                            By submitting this form, you agree to our <a href="legal-pages/privacy-policy.html" style="color: #667eea; text-decoration: none;">Privacy Policy</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Mobile Responsive Styles -->
+            <style>
+                @media (max-width: 968px) {
+                    section > div:nth-child(2) {
+                        grid-template-columns: 1fr !important;
+                        gap: 30px !important;
+                    }
+                }
+            </style>
         </section>
 
         <!-- Footer -->
