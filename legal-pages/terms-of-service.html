@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Terms of Service - JAFF STUDIO</title>
+    <meta name="description" content="Terms of Service for JAFF STUDIO services.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <!-- Google Translate -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Three.js for 3D Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- 3D Canvas Background -->
+    <canvas id="canvas-3d"></canvas>
+
+    <!-- Gradient Overlay -->
+    <div class="gradient-overlay"></div>
+
+    <!-- Floating Orbs -->
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="floating-orb orb-3"></div>
+
+    <!-- Content Layer -->
+    <div class="content-layer">
+        <!-- Navigation -->
+        <nav>
+            <a href="../index.html" class="logo">JAFFSTUDIO</a>
+            <ul class="nav-menu">
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../about.html">ABOUT</a></li>
+                <li><a href="../services.html">SERVICES</a></li>
+                <li><a href="../portfolio.html">PORTFOLIO</a></li>
+                <li><a href="../pricing.html">PRICING</a></li>
+                <li><a href="../faq.html">FAQ</a></li>
+                <li><a href="../contact.html">CONTACT</a></li>
+            </ul>
+            <div id="google_translate_element" class="translate-widget"></div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html" class="mobile-menu-link">HOME</a>
+            <a href="../about.html" class="mobile-menu-link">ABOUT</a>
+            <a href="../services.html" class="mobile-menu-link">SERVICES</a>
+            <a href="../portfolio.html" class="mobile-menu-link">PORTFOLIO</a>
+            <a href="../pricing.html" class="mobile-menu-link">PRICING</a>
+            <a href="../faq.html" class="mobile-menu-link">FAQ</a>
+            <a href="../contact.html" class="mobile-menu-link">CONTACT</a>
+        </div>
+
+        <!-- Legal Content -->
+        <section style="padding: 120px 20px 80px; max-width: 900px; margin: 0 auto;">
+            <div class="glass-card" style="padding: 60px 40px; text-align: left;">
+                <h1 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; color: #000;">Terms of Service</h1>
+                <p style="color: #666; margin-bottom: 40px; font-size: 0.95rem;">Last updated: January 2025</p>
+
+                <div style="line-height: 1.8; color: #333;">
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">1. Agreement to Terms</h2>
+                    <p style="margin-bottom: 20px;">By accessing or using JAFF STUDIO's services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree, you may not use our services.</p>
+                    <p style="margin-bottom: 20px;">These Terms constitute a legally binding agreement between you ("Client," "you," or "your") and JAFF STUDIO ("we," "us," or "our"), a company based in Switzerland.</p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">2. Services</h2>
+                    <p style="margin-bottom: 15px;">JAFF STUDIO provides the following services:</p>
+                    <ul style="margin-left: 30px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>AI Solutions:</strong> Custom AI chatbots, voice agents, and automation systems</li>
+                        <li style="margin-bottom: 10px;"><strong>Website Development:</strong> Custom web design, development, and maintenance</li>
+                        <li style="margin-bottom: 10px;"><strong>Social Media Management:</strong> Content creation, posting, and community management</li>
+                        <li style="margin-bottom: 10px;"><strong>Branding & Design:</strong> Logo design, brand identity, and visual assets</li>
+                    </ul>
+                    <p style="margin-bottom: 20px;">Specific deliverables, timelines, and pricing will be outlined in individual project agreements or statements of work.</p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">3. Client Obligations</h2>
+                    <p style="margin-bottom: 15px;">You agree to:</p>
+                    <ul style="margin-left: 30px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;">Provide accurate, complete, and timely information required for project completion</li>
+                        <li style="margin-bottom: 10px;">Provide necessary assets (logos, images, content, credentials) in a timely manner</li>
+                        <li style="margin-bottom: 10px;">Respond to communication requests within 3 business days</li>
+                        <li style="margin-bottom: 10px;">Make timely payments according to the agreed payment schedule</li>
+                        <li style="margin-bottom: 10px;">Not use our services for illegal, harmful, or unethical purposes</li>
+                        <li style="margin-bottom: 10px;">Comply with all applicable laws and third-party platform terms (Facebook, Instagram, etc.)</li>
+                    </ul>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">4. Payment Terms</h2>
+                    <p style="margin-bottom: 15px;"><strong>4.1 Pricing:</strong> Pricing is outlined on our pricing page and in individual proposals. All prices are in USD unless otherwise specified and are subject to Swiss VAT where applicable.</p>
+                    <p style="margin-bottom: 15px;"><strong>4.2 Payment Schedule:</strong></p>
+                    <ul style="margin-left: 30px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;">50% deposit required before project commencement</li>
+                        <li style="margin-bottom: 10px;">Remaining 50% due upon project completion or go-live</li>
+                        <li style="margin-bottom: 10px;">Monthly retainers: Due on the 1st of each month</li>
+                    </ul>
+                    <p style="margin-bottom: 15px;"><strong>4.3 Late Payments:</strong> Invoices not paid within 14 days may incur a 5% late fee and suspension of services until payment is received.</p>
+                    <p style="margin-bottom: 20px;"><strong>4.4 Refunds:</strong> Deposits are non-refundable once work has commenced. Completed work is non-refundable. See Section 8 for cancellation policy.</p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">5. Intellectual Property</h2>
+                    <p style="margin-bottom: 15px;"><strong>5.1 Client Ownership:</strong> Upon full payment, you own all final deliverables created specifically for your project (website code, graphics, content). This is our "You Own Everything" promise.</p>
+                    <p style="margin-bottom: 15px;"><strong>5.2 JAFF STUDIO Rights:</strong> We retain ownership of:</p>
+                    <ul style="margin-left: 30px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;">Pre-existing tools, frameworks, and methodologies</li>
+                        <li style="margin-bottom: 10px;">Work-in-progress and drafts (until final payment)</li>
+                        <li style="margin-bottom: 10px;">The right to showcase your project in our portfolio (with your permission)</li>
+                    </ul>
+                    <p style="margin-bottom: 15px;"><strong>5.3 Third-Party Assets:</strong> If we use third-party components (fonts, stock photos, plugins), you are responsible for complying with their licenses. We will inform you of any licensing requirements.</p>
+                    <p style="margin-bottom: 20px;"><strong>5.4 AI-Generated Content:</strong> See our <a href="ai-disclaimer.html" style="color: #000; text-decoration: underline;">AI Disclaimer</a> for specifics on AI-generated work.</p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">6. Project Timeline & Revisions</h2>
+                    <p style="margin-bottom: 15px;"><strong>6.1 Timeline:</strong> Estimated timelines are provided in good faith but are not guarantees. Delays caused by client feedback delays, scope changes, or third-party issues are not our responsibility.</p>
+                    <p style="margin-bottom: 15px;"><strong>6.2 Revisions:</strong> Each package includes a specified number of revision rounds (typically 2-3). Additional revisions beyond the agreed scope will be billed at our hourly rate (CHF 150/hour or equivalent).</p>
+                    <p style="margin-bottom: 20px;"><strong>6.3 Scope Changes:</strong> Requests that fall outside the original project scope will require a change order with additional fees and timeline adjustments.</p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">7. Warranties & Limitations</h2>
+                    <p style="margin-bottom: 15px;"><strong>7.1 Warranty Period:</strong> We provide a 30-day warranty on website functionality and bug fixes after project delivery. This does not cover:</p>
+                    <ul style="margin-left: 30px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;">Issues caused by third-party plugins, hosting, or services</li>
+                        <li style="margin-bottom: 10px;">Changes you or other developers make after delivery</li>
+                        <li style="margin-bottom: 10px;">Browser or technology updates that occur after delivery</li>
+                    </ul>
+                    <p style="margin-bottom: 15px;"><strong>7.2 No Guarantees:</strong> While we strive for excellence, we do not guarantee specific business results (traffic, sales, conversions) from our services. Marketing and business outcomes depend on many factors outside our control.</p>
+                    <p style="margin-bottom: 20px;"><strong>7.3 Limitation of Liability:</strong> Our total liability for any claim related to our services shall not exceed the total fees paid by you for the specific project. We are not liable for indirect, incidental, or consequential damages.</p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">8. Termination & Cancellation</h2>
+                    <p style="margin-bottom: 15px;"><strong>8.1 Client Cancellation:</strong> You may cancel a project at any time. You will be billed for work completed to date plus any non-refundable expenses. The deposit is non-refundable.</p>
+                    <p style="margin-bottom: 15px;"><strong>8.2 JAFF STUDIO Cancellation:</strong> We reserve the right to terminate services if:</p>
+                    <ul style="margin-left: 30px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;">Payment is not received within 30 days of invoice date</li>
+                        <li style="margin-bottom: 10px;">You violate these Terms or engage in illegal activity</li>
+                        <li style="margin-bottom: 10px;">You are unresponsive for 30+ days despite multiple contact attempts</li>
+                    </ul>
+                    <p style="margin-bottom: 20px;"><strong>8.3 Post-Termination:</strong> Upon termination, you must pay for all work completed. We will provide deliverables for paid work within 14 days of final payment.</p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">9. Confidentiality</h2>
+                    <p style="margin-bottom: 20px;">Both parties agree to keep confidential information shared during the project confidential, except where disclosure is required by law or with prior written consent. This obligation survives termination of services.</p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">10. Third-Party Services</h2>
+                    <p style="margin-bottom: 20px;">Our services may integrate with third-party platforms (hosting providers, payment processors, social media platforms, AI APIs). You are responsible for complying with their terms of service. We are not liable for third-party service outages, changes, or issues.</p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">11. Indemnification</h2>
+                    <p style="margin-bottom: 20px;">You agree to indemnify and hold JAFF STUDIO harmless from any claims, damages, or expenses arising from: (a) your use of our services, (b) your violation of these Terms, (c) content you provide to us, or (d) your violation of third-party rights.</p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">12. Governing Law & Jurisdiction</h2>
+                    <p style="margin-bottom: 20px;">These Terms are governed by the laws of Switzerland. Any disputes shall be resolved in the courts of [Your Canton], Switzerland. If you are a consumer in the EU, you retain protections under EU consumer law.</p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">13. Changes to Terms</h2>
+                    <p style="margin-bottom: 20px;">We may update these Terms periodically. Continued use of our services after changes constitutes acceptance. We will notify active clients of material changes via email.</p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">14. Severability</h2>
+                    <p style="margin-bottom: 20px;">If any provision of these Terms is found unenforceable, the remaining provisions remain in full effect.</p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">15. Entire Agreement</h2>
+                    <p style="margin-bottom: 20px;">These Terms, together with any project-specific agreements, constitute the entire agreement between you and JAFF STUDIO.</p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">16. Contact</h2>
+                    <p style="margin-bottom: 20px;">Questions about these Terms?<br><br>
+                    Email: [your-email@example.com]<br>
+                    Phone: [Your Phone Number]<br>
+                    <!-- ⚠️ IMPORTANT: Replace with your real WhatsApp number (include country code) --><br>
+                    WhatsApp: <a href="https://wa.me/1234567890" style="color: #000; text-decoration: underline;">Contact via WhatsApp</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>JAFF STUDIO</h3>
+                    <p>Elite creative agency delivering AI-powered solutions, premium web development, and strategic social media management.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="../about.html">About Us</a>
+                    <a href="../services.html">Services</a>
+                    <a href="../portfolio.html">Portfolio</a>
+                    <a href="../pricing.html">Pricing</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="cookie-policy.html">Cookie Policy</a>
+                    <a href="imprint.html">Imprint</a>
+                    <a href="ai-disclaimer.html">AI Disclaimer</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <!-- ⚠️ IMPORTANT: Replace with your real contact info -->
+                    <a href="mailto:contact@jaffstudio.com">contact@jaffstudio.com</a>
+                    <a href="https://wa.me/1234567890">WhatsApp</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 JAFF STUDIO. All rights reserved. Based in Switzerland 🇨🇭</p>
+            </div>
+        </footer>
+
+        <!-- Back to Top Button -->
+        <button class="back-to-top">↑</button>
+    </div>
+
+    <script src="../js/scripts.js"></script>
+</body>
+</html>

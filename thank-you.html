@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Thank You - JAFF STUDIO</title>
+    <meta name="description" content="Thank you for contacting JAFF STUDIO.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Google Translate -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Three.js for 3D Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- 3D Canvas Background -->
+    <canvas id="canvas-3d"></canvas>
+
+    <!-- Gradient Overlay -->
+    <div class="gradient-overlay"></div>
+
+    <!-- Floating Orbs -->
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="floating-orb orb-3"></div>
+
+    <!-- Content Layer -->
+    <div class="content-layer">
+        <!-- Navigation -->
+        <nav>
+            <a href="index.html" class="logo">JAFFSTUDIO</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="portfolio.html">PORTFOLIO</a></li>
+                <li><a href="pricing.html">PRICING</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+            <div id="google_translate_element" class="translate-widget"></div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html" class="mobile-menu-link">HOME</a>
+            <a href="about.html" class="mobile-menu-link">ABOUT</a>
+            <a href="services.html" class="mobile-menu-link">SERVICES</a>
+            <a href="portfolio.html" class="mobile-menu-link">PORTFOLIO</a>
+            <a href="pricing.html" class="mobile-menu-link">PRICING</a>
+            <a href="faq.html" class="mobile-menu-link">FAQ</a>
+            <a href="contact.html" class="mobile-menu-link">CONTACT</a>
+        </div>
+
+        <!-- Thank You Section -->
+        <section style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 20px 80px;">
+            <div style="max-width: 700px; text-align: center;">
+                <!-- Success Animation -->
+                <div style="margin-bottom: 40px; animation: successPop 0.6s ease-out;">
+                    <div style="width: 120px; height: 120px; background: #000; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Main Message -->
+                <div class="glass-card" style="padding: 60px 40px; animation: fadeInUp 0.8s ease-out 0.2s both;">
+                    <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 20px; color: #000;">Message Received!</h1>
+                    <p style="font-size: 1.2rem; color: #333; line-height: 1.8; margin-bottom: 30px;">
+                        Thank you for reaching out to JAFF STUDIO. Your message has been successfully delivered to our team.
+                    </p>
+                    <p style="font-size: 1rem; color: #666; line-height: 1.7; margin-bottom: 40px;">
+                        We take every inquiry seriously and aim to respond within <strong style="color: #000;">24 hours</strong>. One of our specialists will review your message and get back to you with a personalized response.
+                    </p>
+
+                    <!-- What Happens Next -->
+                    <div style="background: #f9f9f9; padding: 30px; border-radius: 10px; margin-bottom: 40px; text-align: left;">
+                        <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 20px; color: #000; text-align: center;">What Happens Next?</h3>
+                        <div style="display: grid; gap: 15px;">
+                            <div style="display: flex; align-items: start; gap: 15px;">
+                                <div style="background: #000; color: #fff; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">1</div>
+                                <div>
+                                    <strong style="color: #000; display: block; margin-bottom: 5px;">We Review Your Inquiry</strong>
+                                    <span style="color: #666; font-size: 0.95rem;">Our team reads your message carefully to understand your needs</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: start; gap: 15px;">
+                                <div style="background: #000; color: #fff; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">2</div>
+                                <div>
+                                    <strong style="color: #000; display: block; margin-bottom: 5px;">We Prepare a Response</strong>
+                                    <span style="color: #666; font-size: 0.95rem;">We craft a personalized reply with relevant information or next steps</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: start; gap: 15px;">
+                                <div style="background: #000; color: #fff; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">3</div>
+                                <div>
+                                    <strong style="color: #000; display: block; margin-bottom: 5px;">You Get an Answer</strong>
+                                    <span style="color: #666; font-size: 0.95rem;">Expect a detailed email from us within 24 hours (check spam folder!)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Urgent Contact -->
+                    <div style="background: #000; color: #fff; padding: 25px; border-radius: 10px; margin-bottom: 40px;">
+                        <p style="font-size: 1rem; margin-bottom: 10px; font-weight: 600;">Need to talk immediately?</p>
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">For urgent matters, reach out directly via WhatsApp</p>
+                        <!-- ⚠️ IMPORTANT: Replace '1234567890' with your real WhatsApp number (include country code) -->
+                        <a href="https://wa.me/1234567890" class="cta-button" style="display: inline-block; background: #fff; color: #000; padding: 12px 30px; text-decoration: none; font-weight: 700; border-radius: 50px; transition: transform 0.3s ease;">
+                            💬 WhatsApp Us Now
+                        </a>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                        <a href="index.html" class="cta-button" style="background: #000; color: #fff; padding: 15px 35px; text-decoration: none; font-weight: 700; border-radius: 50px; transition: all 0.3s ease; display: inline-block;">
+                            Back to Home
+                        </a>
+                        <a href="services.html" class="cta-button-outline" style="background: transparent; color: #000; padding: 15px 35px; text-decoration: none; font-weight: 700; border-radius: 50px; border: 2px solid #000; transition: all 0.3s ease; display: inline-block;">
+                            Explore Services
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Additional Resources -->
+                <div style="margin-top: 40px; animation: fadeInUp 0.8s ease-out 0.4s both;">
+                    <p style="color: #666; margin-bottom: 20px;">While you wait, check out:</p>
+                    <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                        <a href="portfolio.html" style="color: #000; text-decoration: underline; font-weight: 600; transition: opacity 0.3s;">Our Portfolio</a>
+                        <a href="pricing.html" style="color: #000; text-decoration: underline; font-weight: 600; transition: opacity 0.3s;">Pricing Packages</a>
+                        <a href="faq.html" style="color: #000; text-decoration: underline; font-weight: 600; transition: opacity 0.3s;">FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>JAFF STUDIO</h3>
+                    <p>Elite creative agency delivering AI-powered solutions, premium web development, and strategic social media management.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="legal-pages/privacy-policy.html">Privacy Policy</a>
+                    <a href="legal-pages/terms-of-service.html">Terms of Service</a>
+                    <a href="legal-pages/cookie-policy.html">Cookie Policy</a>
+                    <a href="legal-pages/imprint.html">Imprint</a>
+                    <a href="legal-pages/ai-disclaimer.html">AI Disclaimer</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <!-- ⚠️ IMPORTANT: Replace with your real contact info -->
+                    <a href="mailto:contact@jaffstudio.com">contact@jaffstudio.com</a>
+                    <a href="https://wa.me/1234567890">WhatsApp</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 JAFF STUDIO. All rights reserved. Based in Switzerland 🇨🇭</p>
+            </div>
+        </footer>
+
+        <!-- Back to Top Button -->
+        <button class="back-to-top">↑</button>
+    </div>
+
+    <!-- Animations -->
+    <style>
+        @keyframes successPop {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-button-outline:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        a[href^="portfolio"]:hover,
+        a[href^="pricing"]:hover,
+        a[href^="faq"]:hover {
+            opacity: 0.7;
+        }
+    </style>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>AI Disclaimer - JAFF STUDIO</title>
+    <meta name="description" content="Transparency about AI usage in JAFF STUDIO services.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <!-- Google Translate -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Three.js for 3D Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- 3D Canvas Background -->
+    <canvas id="canvas-3d"></canvas>
+
+    <!-- Gradient Overlay -->
+    <div class="gradient-overlay"></div>
+
+    <!-- Floating Orbs -->
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="floating-orb orb-3"></div>
+
+    <!-- Content Layer -->
+    <div class="content-layer">
+        <!-- Navigation -->
+        <nav>
+            <a href="../index.html" class="logo">JAFFSTUDIO</a>
+            <ul class="nav-menu">
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../about.html">ABOUT</a></li>
+                <li><a href="../services.html">SERVICES</a></li>
+                <li><a href="../portfolio.html">PORTFOLIO</a></li>
+                <li><a href="../pricing.html">PRICING</a></li>
+                <li><a href="../faq.html">FAQ</a></li>
+                <li><a href="../contact.html">CONTACT</a></li>
+            </ul>
+            <div id="google_translate_element" class="translate-widget"></div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html" class="mobile-menu-link">HOME</a>
+            <a href="../about.html" class="mobile-menu-link">ABOUT</a>
+            <a href="../services.html" class="mobile-menu-link">SERVICES</a>
+            <a href="../portfolio.html" class="mobile-menu-link">PORTFOLIO</a>
+            <a href="../pricing.html" class="mobile-menu-link">PRICING</a>
+            <a href="../faq.html" class="mobile-menu-link">FAQ</a>
+            <a href="../contact.html" class="mobile-menu-link">CONTACT</a>
+        </div>
+
+        <!-- Legal Content -->
+        <section style="padding: 120px 20px 80px; max-width: 900px; margin: 0 auto;">
+            <div class="glass-card" style="padding: 60px 40px; text-align: left;">
+                <h1 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; color: #000;">AI Disclaimer</h1>
+                <p style="color: #666; margin-bottom: 40px; font-size: 0.95rem;">Transparency about artificial intelligence in our services</p>
+
+                <div style="line-height: 1.8; color: #333;">
+                    <p style="background: #f0f9ff; border-left: 4px solid #000; padding: 20px; margin-bottom: 30px; border-radius: 8px;"><strong>Our Commitment to Transparency:</strong> JAFF STUDIO believes in honest communication about AI usage. This disclaimer explains how, when, and why we use artificial intelligence in our services.</p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">1. Our AI Philosophy</h2>
+                    <p style="margin-bottom: 20px;">We view AI as a powerful tool to enhance our services, <strong>not replace human expertise</strong>. Every AI-assisted deliverable is reviewed, refined, and approved by experienced professionals before delivery to clients.</p>
+                    <p style="margin-bottom: 20px;"><strong>Key Principle:</strong> AI assists, humans lead. We combine cutting-edge technology with strategic thinking, creative vision, and quality control.</p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">2. Where We Use AI</h2>
+                    <p style="margin-bottom: 15px;">JAFF STUDIO uses AI technology in the following areas:</p>
+
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin: 30px 0 15px; color: #000;">2.1 AI Solutions for Clients (Core Service)</h3>
+                    <p style="margin-bottom: 15px;">We build and deploy AI-powered tools for clients:</p>
+                    <ul style="margin-left: 30px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>Custom Chatbots:</strong> Conversational AI for customer support, lead generation, and engagement</li>
+                        <li style="margin-bottom: 10px;"><strong>Voice Agents:</strong> AI phone systems for appointment booking, call routing, and information delivery</li>
+                        <li style="margin-bottom: 10px;"><strong>Automation Systems:</strong> Workflow automation using AI to save time and reduce errors</li>
+                        <li style="margin-bottom: 10px;"><strong>Content Generation:</strong> AI-assisted copywriting, social media posts, and email campaigns</li>
+                    </ul>
+                    <p style="margin-bottom: 20px;">We clearly disclose to clients how their AI systems work and what data they process. Clients retain full control and ownership of their AI implementations.</p>
+
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin: 30px 0 15px; color: #000;">2.2 Internal AI-Assisted Workflows</h3>
+                    <p style="margin-bottom: 15px;">We use AI to improve efficiency in our own work:</p>
+                    <ul style="margin-left: 30px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>Code Development:</strong> AI coding assistants for faster development (all code is reviewed and tested)</li>
+                        <li style="margin-bottom: 10px;"><strong>Design Drafts:</strong> AI-generated design concepts as starting points (refined by human designers)</li>
+                        <li style="margin-bottom: 10px;"><strong>Content Ideation:</strong> AI brainstorming for marketing strategies and campaign ideas</li>
+                        <li style="margin-bottom: 10px;"><strong>Research & Analysis:</strong> AI-powered data analysis and competitor research</li>
+                        <li style="margin-bottom: 10px;"><strong>Administrative Tasks:</strong> Scheduling, email drafting, and document organization</li>
+                    </ul>
+
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin: 30px 0 15px; color: #000;">2.3 Website & Communication</h3>
+                    <ul style="margin-left: 30px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;">AI chatbot may be used on our website for initial inquiries (clearly labeled)</li>
+                        <li style="margin-bottom: 10px;">Some website content may be AI-assisted in drafting</li>
+                        <li style="margin-bottom: 10px;">Marketing materials may use AI-generated images (with proper licensing)</li>
+                    </ul>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">3. What We DON'T Do with AI</h2>
+                    <ul style="margin-left: 30px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;">❌ <strong>No blind acceptance:</strong> We never deliver AI outputs without human review and editing</li>
+                        <li style="margin-bottom: 10px;">❌ <strong>No client data training:</strong> We do not use your confidential information to train AI models</li>
+                        <li style="margin-bottom: 10px;">❌ <strong>No misrepresentation:</strong> We don't claim AI-generated work as 100% human-created</li>
+                        <li style="margin-bottom: 10px;">❌ <strong>No replacement of expertise:</strong> AI doesn't replace our strategic thinking and experience</li>
+                        <li style="margin-bottom: 10px;">❌ <strong>No unethical use:</strong> We avoid AI for deceptive practices, misinformation, or manipulation</li>
+                    </ul>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">4. Quality Control Process</h2>
+                    <p style="margin-bottom: 15px;">All AI-assisted work goes through our rigorous quality control:</p>
+                    <ol style="margin-left: 30px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>AI Generation:</strong> Initial output created by AI tool</li>
+                        <li style="margin-bottom: 10px;"><strong>Human Review:</strong> Expert review for accuracy, relevance, and quality</li>
+                        <li style="margin-bottom: 10px;"><strong>Refinement:</strong> Edits, rewrites, and improvements by our team</li>
+                        <li style="margin-bottom: 10px;"><strong>Compliance Check:</strong> Ensure legal, ethical, and brand alignment</li>
+                        <li style="margin-bottom: 10px;"><strong>Testing:</strong> Functionality and performance testing (for code/systems)</li>
+                        <li style="margin-bottom: 10px;"><strong>Final Approval:</strong> Senior team member approval before client delivery</li>
+                    </ol>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">5. Data Privacy & AI</h2>
+                    <p style="margin-bottom: 15px;"><strong>Your data security is paramount. Here's how we protect it when using AI:</strong></p>
+                    <ul style="margin-left: 30px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;">We only use AI providers with strong data protection policies</li>
+                        <li style="margin-bottom: 10px;">We anonymize or remove sensitive data before AI processing when possible</li>
+                        <li style="margin-bottom: 10px;">We use enterprise AI plans with no-training guarantees (your data won't train public models)</li>
+                        <li style="margin-bottom: 10px;">We comply with Swiss nFADP and EU GDPR for all AI-related data processing</li>
+                        <li style="margin-bottom: 10px;">We sign data processing agreements (DPAs) with AI vendors</li>
+                    </ul>
+                    <p style="margin-bottom: 20px;">For more details, see our <a href="privacy-policy.html" style="color: #000; text-decoration: underline;">Privacy Policy</a>.</p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">6. AI Providers We Use</h2>
+                    <p style="margin-bottom: 15px;">We work with reputable AI providers, including but not limited to:</p>
+                    <ul style="margin-left: 30px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;">OpenAI (GPT models) for chatbots and content</li>
+                        <li style="margin-bottom: 10px;">Anthropic (Claude) for advanced reasoning tasks</li>
+                        <li style="margin-bottom: 10px;">Google AI for translation and vision tasks</li>
+                        <li style="margin-bottom: 10px;">Midjourney/DALL-E for image generation</li>
+                        <li style="margin-bottom: 10px;">Various open-source models for specialized tasks</li>
+                    </ul>
+                    <p style="margin-bottom: 20px;">This list may change as technology evolves. We always choose providers based on quality, security, and ethical standards.</p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">7. Intellectual Property & AI-Generated Content</h2>
+                    <p style="margin-bottom: 15px;"><strong>7.1 Ownership:</strong> Under our "You Own Everything" promise, you own all final deliverables, including AI-assisted work. We provide full commercial rights to use, modify, and distribute the deliverables.</p>
+                    <p style="margin-bottom: 15px;"><strong>7.2 Originality:</strong> We ensure AI-generated content does not infringe on third-party copyrights. We check for plagiarism and modify outputs to be unique.</p>
+                    <p style="margin-bottom: 20px;"><strong>7.3 Disclosure:</strong> Upon request, we will disclose which parts of your deliverables were AI-assisted vs. fully human-created.</p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">8. Limitations & Risks of AI</h2>
+                    <p style="margin-bottom: 15px;">We acknowledge that AI has limitations:</p>
+                    <ul style="margin-left: 30px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>Hallucinations:</strong> AI can generate false or nonsensical information. We verify all factual claims.</li>
+                        <li style="margin-bottom: 10px;"><strong>Bias:</strong> AI models can reflect societal biases. We review outputs for fairness and inclusivity.</li>
+                        <li style="margin-bottom: 10px;"><strong>Lack of Context:</strong> AI may miss nuance or cultural context. Human oversight provides necessary context.</li>
+                        <li style="margin-bottom: 10px;"><strong>Consistency:</strong> AI outputs can vary. We ensure brand consistency through human editing.</li>
+                        <li style="margin-bottom: 10px;"><strong>Security:</strong> AI systems can have vulnerabilities. We implement security best practices.</li>
+                    </ul>
+                    <p style="margin-bottom: 20px;"><strong>Our mitigation strategy:</strong> Human oversight at every stage, testing, and continuous improvement.</p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">9. Your Rights</h2>
+                    <p style="margin-bottom: 15px;">As our client, you have the right to:</p>
+                    <ul style="margin-left: 30px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;">✓ <strong>Request non-AI alternatives</strong> for any service (may affect pricing/timeline)</li>
+                        <li style="margin-bottom: 10px;">✓ <strong>Know which AI tools</strong> were used in your project</li>
+                        <li style="margin-bottom: 10px;">✓ <strong>Opt-out of specific AI providers</strong> if you have concerns</li>
+                        <li style="margin-bottom: 10px;">✓ <strong>Request human-only review</strong> for sensitive content</li>
+                        <li style="margin-bottom: 10px;">✓ <strong>See transparency reports</strong> about AI usage in your deliverables</li>
+                    </ul>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">10. Ethical Standards</h2>
+                    <p style="margin-bottom: 15px;">JAFF STUDIO commits to ethical AI use:</p>
+                    <ul style="margin-left: 30px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;">🎯 <strong>Transparency:</strong> Clear disclosure of AI usage</li>
+                        <li style="margin-bottom: 10px;">🔒 <strong>Privacy:</strong> Protect client and user data</li>
+                        <li style="margin-bottom: 10px;">⚖️ <strong>Fairness:</strong> Avoid discriminatory or biased AI outputs</li>
+                        <li style="margin-bottom: 10px;">✅ <strong>Accuracy:</strong> Verify AI-generated facts and claims</li>
+                        <li style="margin-bottom: 10px;">🛡️ <strong>Safety:</strong> Prevent harmful or misleading content</li>
+                        <li style="margin-bottom: 10px;">♻️ <strong>Sustainability:</strong> Consider environmental impact of AI usage</li>
+                    </ul>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">11. Future AI Developments</h2>
+                    <p style="margin-bottom: 20px;">AI technology evolves rapidly. We commit to:</p>
+                    <ul style="margin-left: 30px; margin-bottom: 20px;">
+                        <li style="margin-bottom: 10px;">Stay informed about AI advancements and risks</li>
+                        <li style="margin-bottom: 10px;">Update our practices as regulations and best practices evolve</li>
+                        <li style="margin-bottom: 10px;">Notify clients of significant changes to our AI usage</li>
+                        <li style="margin-bottom: 10px;">Participate in industry discussions about responsible AI</li>
+                    </ul>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">12. Questions or Concerns?</h2>
+                    <p style="margin-bottom: 20px;">We welcome questions about our AI practices. Contact us:</p>
+                    <p style="margin-bottom: 20px;">
+                    Email: [your-email@example.com]<br>
+                    Phone: [Your Phone Number]<br>
+                    <!-- ⚠️ IMPORTANT: Replace with your real WhatsApp number (include country code) --><br>
+                    WhatsApp: <a href="https://wa.me/1234567890" style="color: #000; text-decoration: underline;">Contact via WhatsApp</a>
+                    </p>
+
+                    <h2 style="font-size: 1.5rem; font-weight: 700; margin: 40px 0 20px; color: #000;">13. Updates to This Disclaimer</h2>
+                    <p style="margin-bottom: 20px;">We may update this AI Disclaimer as technology and our practices evolve. The "Last updated" date reflects the most recent version. Major changes will be communicated to active clients.</p>
+
+                    <div style="background: #000; color: #fff; padding: 30px; border-radius: 10px; margin-top: 50px; text-align: center;">
+                        <p style="font-size: 1.2rem; font-weight: 700; margin-bottom: 15px;">Our Promise</p>
+                        <p style="margin-bottom: 0; line-height: 1.7;">AI is our tool, not our master. We use it to work faster and smarter, but never compromise quality, ethics, or your trust. Every deliverable reflects our expertise, creativity, and commitment to your success.</p>
+                    </div>
+
+                    <p style="margin-top: 40px; padding-top: 30px; border-top: 2px solid #eee; color: #666; font-size: 0.9rem;"><em>This AI Disclaimer was last updated in January 2025.</em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>JAFF STUDIO</h3>
+                    <p>Elite creative agency delivering AI-powered solutions, premium web development, and strategic social media management.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="../about.html">About Us</a>
+                    <a href="../services.html">Services</a>
+                    <a href="../portfolio.html">Portfolio</a>
+                    <a href="../pricing.html">Pricing</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="cookie-policy.html">Cookie Policy</a>
+                    <a href="imprint.html">Imprint</a>
+                    <a href="ai-disclaimer.html">AI Disclaimer</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <!-- ⚠️ IMPORTANT: Replace with your real contact info -->
+                    <a href="mailto:contact@jaffstudio.com">contact@jaffstudio.com</a>
+                    <a href="https://wa.me/1234567890">WhatsApp</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 JAFF STUDIO. All rights reserved. Based in Switzerland 🇨🇭</p>
+            </div>
+        </footer>
+
+        <!-- Back to Top Button -->
+        <button class="back-to-top">↑</button>
+    </div>
+
+    <script src="../js/scripts.js"></script>
+</body>
+</html>
