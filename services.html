@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Our Services - JAFF STUDIO | AI Solutions, Web Development & Social Media</title>
+    <meta name="description" content="Explore our premium services: AI Solutions, Website Development, and Social Media Management.">
+
+    <!-- Google Translate -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Three.js for 3D Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- 3D Canvas Background -->
+    <canvas id="canvas-3d"></canvas>
+
+    <!-- Gradient Overlay -->
+    <div class="gradient-overlay"></div>
+
+    <!-- Content Layer -->
+    <div class="content-layer">
+        <!-- Navigation -->
+        <nav>
+            <a href="index.html" class="logo">JAFFSTUDIO</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="portfolio.html">PORTFOLIO</a></li>
+                <li><a href="pricing.html">PRICING</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div id="google_translate_element"></div>
+                <a href="contact.html" class="nav-cta">LET'S TALK</a>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html" class="mobile-menu-link">HOME</a></li>
+                <li><a href="about.html" class="mobile-menu-link">ABOUT</a></li>
+                <li><a href="services.html" class="mobile-menu-link">SERVICES</a></li>
+                <li><a href="portfolio.html" class="mobile-menu-link">PORTFOLIO</a></li>
+                <li><a href="pricing.html" class="mobile-menu-link">PRICING</a></li>
+                <li><a href="faq.html" class="mobile-menu-link">FAQ</a></li>
+                <li><a href="contact.html" class="mobile-menu-link">CONTACT</a></li>
+            </ul>
+            <a href="contact.html" class="mobile-menu-cta mobile-menu-link">LET'S TALK</a>
+        </div>
+
+        <!-- Services Section -->
+        <section style="margin-top: 80px;">
+            <p class="section-eyebrow" style="color: #666;">WHAT WE DO</p>
+            <h2 class="section-title">Our Premium Services</h2>
+            <p class="section-subtitle">Cutting-edge solutions powered by innovation and creativity</p>
+            <div class="services-grid">
+                <!-- AI Solutions -->
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <div class="service-icon">🤖</div>
+                    <p class="service-category">INTELLIGENT AUTOMATION</p>
+                    <h3 class="service-title">AI Solutions</h3>
+                    <p class="service-description">Transform your business with cutting-edge artificial intelligence and automation</p>
+                    <ul class="service-list">
+                        <li>Custom AI Chatbots for customer service automation and lead generation</li>
+                        <li>Voice Agents for phone automation and intelligent voice assistants</li>
+                        <li>Business Process Automation for workflow optimization</li>
+                        <li>AI-powered data processing and analysis</li>
+                        <li>24/7 automated customer support systems</li>
+                    </ul>
+                    <a href="contact.html" class="service-cta">Get Started</a>
+                </div>
+
+                <!-- Website Development -->
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <div class="service-icon">💻</div>
+                    <p class="service-category">DIGITAL PRESENCE</p>
+                    <h3 class="service-title">Website Development</h3>
+                    <p class="service-description">Premium websites and web applications built for performance and conversion</p>
+                    <ul class="service-list">
+                        <li>E-commerce websites with payment integration and inventory management</li>
+                        <li>Business websites, corporate sites, and landing pages</li>
+                        <li>Portfolio sites and personal branding websites</li>
+                        <li>Custom web applications tailored to your needs</li>
+                        <li>Responsive design for all devices and platforms</li>
+                    </ul>
+                    <a href="contact.html" class="service-cta">Get Started</a>
+                </div>
+
+                <!-- Social Media Management -->
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <div class="service-icon">📱</div>
+                    <p class="service-category">BRAND GROWTH</p>
+                    <h3 class="service-title">Social Media Management</h3>
+                    <p class="service-description">Strategic social media solutions that drive engagement and revenue</p>
+                    <ul class="service-list">
+                        <li>Professional content creation and scheduling</li>
+                        <li>Data-driven social media strategy and planning</li>
+                        <li>Paid advertising campaigns (Facebook, Instagram, Google Ads)</li>
+                        <li>Comprehensive analytics and performance reporting</li>
+                        <li>Community management and engagement optimization</li>
+                    </ul>
+                    <a href="contact.html" class="service-cta">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <h3 style="font-size: 2rem; font-weight: 900; margin-bottom: 20px; color: #fff;">JAFF STUDIO</h3>
+            <p style="color: rgba(255,255,255,0.6); margin-bottom: 30px;">Elite AI-Powered Creative Agency</p>
+
+            <!-- Social Media Links -->
+            <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 30px;">
+                <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.3s;">Instagram</a>
+                <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.3s;">LinkedIn</a>
+                <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.3s;">Twitter</a>
+                <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.3s;">Behance</a>
+            </div>
+
+            <!-- Legal Links -->
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; margin-top: 30px;">
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; font-size: 0.9rem;">
+                    <a href="legal-pages/privacy-policy.html" style="color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s;">Privacy Policy</a>
+                    <span style="color: rgba(255,255,255,0.3);">|</span>
+                    <a href="legal-pages/terms-of-service.html" style="color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s;">Terms of Service</a>
+                    <span style="color: rgba(255,255,255,0.3);">|</span>
+                    <a href="legal-pages/cookie-policy.html" style="color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s;">Cookie Policy</a>
+                    <span style="color: rgba(255,255,255,0.3);">|</span>
+                    <a href="legal-pages/imprint.html" style="color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s;">Imprint</a>
+                    <span style="color: rgba(255,255,255,0.3);">|</span>
+                    <a href="legal-pages/ai-disclaimer.html" style="color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s;">AI Disclaimer</a>
+                </div>
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">&copy; 2025 JAFF STUDIO. All rights reserved.</p>
+                <p style="color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 10px;">Swiss-based AI Agency | Compliant with nFADP</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top">↑</button>
+
+    <!-- WhatsApp Widget -->
+    <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-widget">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
