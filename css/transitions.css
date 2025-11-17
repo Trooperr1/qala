@@ -7,50 +7,30 @@
    PAGE TRANSITION STATES
    ============================================================ */
 
-/* Initial state - page is loading */
+/* Page transitions disabled - instant loading */
 body {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    will-change: opacity;
+    opacity: 1;
 }
 
-/* Page has loaded - fade in */
 body.page-loaded {
     opacity: 1;
-    will-change: auto;
 }
 
-/* Page is transitioning out - fade out */
 body.page-transitioning {
-    opacity: 0;
-    will-change: opacity;
+    opacity: 1;
 }
 
 /* ============================================================
    CONTENT FADE-IN ANIMATIONS
    ============================================================ */
 
-/* Delay content animations until page is loaded */
+/* Content fade disabled - instant visibility */
 .content-layer {
-    opacity: 0;
-    will-change: opacity, transform;
-    animation: contentFadeIn 0.4s ease-out 0.1s forwards;
+    opacity: 1;
 }
 
 body.page-loaded .content-layer {
     opacity: 1;
-    will-change: auto;
-}
-
-@keyframes contentFadeIn {
-    from {
-        opacity: 0;
-        transform: translate3d(0, 10px, 0);
-    }
-    to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
 }
 
 /* ============================================================

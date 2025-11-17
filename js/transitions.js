@@ -42,52 +42,8 @@ class PageTransitions {
     }
 
     attachLinkListeners() {
-        // Get all internal links
-        document.addEventListener('click', (e) => {
-            // Find the closest anchor tag
-            const link = e.target.closest('a');
-
-            if (!link) return;
-
-            const href = link.getAttribute('href');
-
-            // Skip if no href
-            if (!href) return;
-
-            // Skip links that open in new tab
-            if (link.target === '_blank') return;
-
-            // Skip anchor links to same page (handled by smooth scroll)
-            if (href.startsWith('#')) return;
-
-            // Skip special protocols
-            if (href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
-
-            // Skip external links (only if it has a protocol and different domain)
-            if (href.startsWith('http://') || href.startsWith('https://')) {
-                if (link.hostname && link.hostname !== window.location.hostname) {
-                    return;
-                }
-            }
-
-            // Only apply smooth transition when going to HOME page
-            const isGoingHome = href === 'index.html' || href === '/' || href === './index.html' || href.endsWith('/index.html');
-
-            if (!isGoingHome) {
-                // Not going to home - use normal navigation (no transition)
-                return;
-            }
-
-            // Skip if already transitioning
-            if (this.isTransitioning) {
-                e.preventDefault();
-                return;
-            }
-
-            // Trigger page transition (only for home)
-            e.preventDefault();
-            this.transitionToPage(href);
-        });
+        // Page transitions disabled - all navigation uses instant loading
+        // Only smooth scrolling for anchor links is active
     }
 
     transitionToPage(url) {
