@@ -18,7 +18,7 @@ const CONVERSION_CONFIG = {
         cookieDays: 7 // Don't show again for 7 days
     },
     stickyCTA: {
-        enabled: true,
+        enabled: false, // Disabled per user request
         showAfterScroll: 500 // Show after scrolling 500px
     },
     socialProof: {
