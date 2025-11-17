@@ -1158,7 +1158,7 @@ section {
 .whatsapp-widget {
     position: fixed;
     bottom: 30px;
-    right: 30px;
+    left: 30px;
     width: 60px;
     height: 60px;
     background: linear-gradient(135deg, #25D366 0%, #2CB742 100%);
@@ -1380,7 +1380,7 @@ footer a:hover {
         width: 55px !important;
         height: 55px !important;
         bottom: 20px !important;
-        right: 20px !important;
+        left: 20px !important;
     }
 
     .back-to-top {
