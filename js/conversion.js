@@ -22,7 +22,7 @@ const CONVERSION_CONFIG = {
         showAfterScroll: 500 // Show after scrolling 500px
     },
     socialProof: {
-        enabled: true,
+        enabled: false, // Disabled per user request
         showDelay: 3000, // First notification after 3 seconds
         interval: 15000, // New notification every 15 seconds
         displayDuration: 5000 // Show each notification for 5 seconds
