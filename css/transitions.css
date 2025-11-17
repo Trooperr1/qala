@@ -1,0 +1,264 @@
+/**
+ * JAFF STUDIO - Smooth Page Transitions CSS
+ * Handles fade-in/fade-out effects during page navigation
+ */
+
+/* ============================================================
+   PAGE TRANSITION STATES
+   ============================================================ */
+
+/* Initial state - page is loading */
+body {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Page has loaded - fade in */
+body.page-loaded {
+    opacity: 1;
+}
+
+/* Page is transitioning out - fade out */
+body.page-transitioning {
+    opacity: 0;
+}
+
+/* ============================================================
+   CONTENT FADE-IN ANIMATIONS
+   ============================================================ */
+
+/* Delay content animations until page is loaded */
+.content-layer {
+    opacity: 0;
+    animation: contentFadeIn 0.6s ease-out 0.2s forwards;
+}
+
+body.page-loaded .content-layer {
+    opacity: 1;
+}
+
+@keyframes contentFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================
+   SMOOTH SCROLLING
+   ============================================================ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Disable smooth scrolling for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    body,
+    body.page-loaded,
+    body.page-transitioning {
+        transition: none;
+    }
+
+    .content-layer {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+/* ============================================================
+   LOADING INDICATOR (OPTIONAL)
+   ============================================================ */
+
+/* Show a subtle loading bar during transitions */
+body.page-transitioning::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    z-index: 99999;
+    animation: loadingBar 0.4s ease-out forwards;
+}
+
+@keyframes loadingBar {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* ============================================================
+   STAGGERED ANIMATIONS FOR ELEMENTS
+   ============================================================ */
+
+/* Fade in navigation items */
+nav .nav-menu li {
+    opacity: 0;
+    animation: navItemFadeIn 0.5s ease-out forwards;
+}
+
+body.page-loaded nav .nav-menu li:nth-child(1) { animation-delay: 0.1s; }
+body.page-loaded nav .nav-menu li:nth-child(2) { animation-delay: 0.15s; }
+body.page-loaded nav .nav-menu li:nth-child(3) { animation-delay: 0.2s; }
+body.page-loaded nav .nav-menu li:nth-child(4) { animation-delay: 0.25s; }
+body.page-loaded nav .nav-menu li:nth-child(5) { animation-delay: 0.3s; }
+body.page-loaded nav .nav-menu li:nth-child(6) { animation-delay: 0.35s; }
+body.page-loaded nav .nav-menu li:nth-child(7) { animation-delay: 0.4s; }
+
+@keyframes navItemFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade in hero section elements */
+.hero h1,
+.hero-title {
+    opacity: 0;
+    animation: heroTitleFadeIn 0.8s ease-out 0.3s forwards;
+}
+
+@keyframes heroTitleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero p,
+.hero-subtitle {
+    opacity: 0;
+    animation: heroSubtitleFadeIn 0.8s ease-out 0.5s forwards;
+}
+
+@keyframes heroSubtitleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cta-button,
+.hero .cta-button {
+    opacity: 0;
+    animation: ctaFadeIn 0.8s ease-out 0.7s forwards;
+}
+
+@keyframes ctaFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ============================================================
+   SECTION TRANSITIONS (Scroll Reveal)
+   ============================================================ */
+
+/* Fade in sections as they come into view */
+section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+body.page-loaded section {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger section animations */
+section:nth-of-type(1) { transition-delay: 0.1s; }
+section:nth-of-type(2) { transition-delay: 0.2s; }
+section:nth-of-type(3) { transition-delay: 0.3s; }
+section:nth-of-type(4) { transition-delay: 0.4s; }
+section:nth-of-type(5) { transition-delay: 0.5s; }
+
+/* ============================================================
+   BACK TO TOP BUTTON SMOOTH APPEARANCE
+   ============================================================ */
+
+.back-to-top {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+/* ============================================================
+   PREVENT FLASH OF UNSTYLED CONTENT (FOUC)
+   ============================================================ */
+
+/* Hide content until JavaScript is ready */
+.no-js body {
+    opacity: 1 !important;
+}
+
+.no-js .content-layer {
+    opacity: 1 !important;
+    animation: none !important;
+}
+
+/* ============================================================
+   REDUCED MOTION SUPPORT
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    body,
+    .content-layer,
+    nav .nav-menu li,
+    .hero h1,
+    .hero p,
+    .cta-button,
+    section {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
