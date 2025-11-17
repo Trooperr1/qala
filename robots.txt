@@ -1,0 +1,19 @@
+# robots.txt for JAFF STUDIO
+# This file tells search engines which pages to crawl
+
+User-agent: *
+Allow: /
+
+# Disallow admin or sensitive areas (add if needed)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow all CSS and JS files for proper rendering
+Allow: /css/
+Allow: /js/
+
+# Sitemap location (⚠️ IMPORTANT: Update with your actual domain)
+Sitemap: https://yourwebsite.com/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+# Crawl-delay: 10
