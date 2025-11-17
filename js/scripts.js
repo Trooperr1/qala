@@ -216,6 +216,51 @@ function googleTranslateElementInit() {
     }, 'google_translate_element');
 }
 
+// Animated Counter
+function initAnimatedCounters() {
+    const counters = document.querySelectorAll('.counter');
+
+    counters.forEach(counter => {
+        const target = parseFloat(counter.getAttribute('data-target'));
+        const duration = 2000; // 2 seconds
+        const increment = target / (duration / 16); // 60fps
+        let current = 0;
+        let hasAnimated = false;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasAnimated) {
+                    hasAnimated = true;
+
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            // Format decimals for numbers with decimals
+                            if (target % 1 !== 0) {
+                                counter.textContent = current.toFixed(1);
+                            } else {
+                                counter.textContent = Math.floor(current);
+                            }
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            // Final value
+                            if (target % 1 !== 0) {
+                                counter.textContent = target.toFixed(1);
+                            } else {
+                                counter.textContent = target;
+                            }
+                        }
+                    };
+
+                    updateCounter();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(counter);
+    });
+}
+
 // Initialize all functions on page load
 document.addEventListener('DOMContentLoaded', () => {
     init3DBackground();
@@ -225,6 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initMobileMenu();
     setActiveNavLink();
+    initAnimatedCounters();
 });
 
 // Make googleTranslateElementInit available globally
