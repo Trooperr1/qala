@@ -2066,3 +2066,182 @@ body {
 body.page-transition {
     opacity: 0;
 }
+
+/* ============================================ */
+/* NEWSLETTER MODAL */
+/* ============================================ */
+.newsletter-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.newsletter-modal-content {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.newsletter-modal-content h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, var(--accent) 0%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.newsletter-modal-content p {
+    color: var(--white-80);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+#closeNewsletter {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: var(--white-80);
+    font-size: 2rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+#closeNewsletter:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    transform: rotate(90deg);
+}
+
+#newsletterForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#newsletterEmail {
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--white-20);
+    border-radius: var(--radius);
+    color: var(--white);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#newsletterEmail:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+#newsletterEmail::placeholder {
+    color: var(--white-40);
+}
+
+/* ============================================ */
+/* FLOATING CTA */
+/* ============================================ */
+.floating-cta {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--black-80);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3);
+    z-index: 9000;
+    animation: slideUpFade 0.5s ease;
+    transition: all 0.3s ease;
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.floating-cta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 48px rgba(212, 175, 55, 0.5);
+}
+
+.floating-cta p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.floating-cta .btn-primary {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .newsletter-modal-content {
+        padding: 40px 30px !important;
+    }
+
+    .newsletter-modal-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .floating-cta {
+        bottom: 15px;
+        right: 15px;
+        left: 15px;
+    }
+
+    .floating-cta > div {
+        flex-direction: column !important;
+        gap: 10px !important;
+        padding: 15px !important;
+        text-align: center;
+    }
+
+    .floating-cta .btn-primary {
+        width: 100%;
+    }
+}

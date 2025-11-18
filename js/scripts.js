@@ -683,3 +683,109 @@ function initPricingCalculator() {
 
 // Initialize pricing calculator on page load
 document.addEventListener('DOMContentLoaded', initPricingCalculator);
+
+// ============================================
+// NEWSLETTER MODAL
+// ============================================
+function initNewsletterModal() {
+    const modal = document.getElementById('newsletterModal');
+    const closeBtn = document.getElementById('closeNewsletter');
+    const form = document.getElementById('newsletterForm');
+    const emailInput = document.getElementById('newsletterEmail');
+
+    if (!modal) return;
+
+    // Check if newsletter was already shown or submitted
+    const newsletterShown = localStorage.getItem('newsletterShown');
+    const newsletterSubmitted = localStorage.getItem('newsletterSubmitted');
+
+    if (!newsletterShown && !newsletterSubmitted) {
+        // Show modal after 8 seconds
+        setTimeout(() => {
+            modal.style.display = 'flex';
+            localStorage.setItem('newsletterShown', 'true');
+        }, 8000);
+    }
+
+    // Close modal when clicking close button
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    }
+
+    // Close modal when clicking outside content
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // Close modal on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            modal.style.display = 'none';
+        }
+    });
+
+    // Handle form submission
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const email = emailInput.value.trim();
+
+            if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                // Store submission in localStorage
+                localStorage.setItem('newsletterSubmitted', 'true');
+                localStorage.setItem('newsletterEmail', email);
+
+                // Show success message
+                form.innerHTML = `
+                    <div style="text-align: center; padding: 20px;">
+                        <svg class="icon" style="width: 60px; height: 60px; color: var(--accent); margin-bottom: 20px;">
+                            <use href="#icon-shield"></use>
+                        </svg>
+                        <h4 style="color: var(--accent); margin-bottom: 10px;">Thank You!</h4>
+                        <p style="color: var(--white-80);">Check your email for your free 10-point website audit worth 500 CHF!</p>
+                    </div>
+                `;
+
+                // Close modal after 3 seconds
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 3000);
+            }
+        });
+    }
+}
+
+// ============================================
+// FLOATING CTA
+// ============================================
+function initFloatingCTA() {
+    const floatingCTA = document.getElementById('floatingCTA');
+
+    if (!floatingCTA) return;
+
+    let hasShown = false;
+
+    window.addEventListener('scroll', () => {
+        const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+
+        // Show floating CTA after scrolling 30% of page
+        if (scrollPercent > 30 && !hasShown) {
+            floatingCTA.style.display = 'block';
+            hasShown = true;
+        } else if (scrollPercent <= 30 && hasShown) {
+            floatingCTA.style.display = 'none';
+            hasShown = false;
+        }
+    });
+}
+
+// Initialize newsletter modal and floating CTA on page load
+document.addEventListener('DOMContentLoaded', () => {
+    initNewsletterModal();
+    initFloatingCTA();
+});
