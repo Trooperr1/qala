@@ -55,6 +55,49 @@
     <div class="floating-orb orb-2"></div>
     <div class="floating-orb orb-3"></div>
 
+    <!-- SVG Icon Sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="icon-ai" viewBox="0 0 64 64">
+            <path fill="currentColor" d="M32 8c-2.2 0-4 1.8-4 4v4h-8c-2.2 0-4 1.8-4 4v28c0 2.2 1.8 4 4 4h24c2.2 0 4-1.8 4-4V20c0-2.2-1.8-4-4-4h-8v-4c0-2.2-1.8-4-4-4zm-8 16h4v4h-4v-4zm12 0h4v4h-4v-4zM20 36h24v4H20v-4z"/>
+            <circle cx="32" cy="6" r="2" fill="currentColor"/>
+            <rect x="10" y="28" width="6" height="2" rx="1" fill="currentColor"/>
+            <rect x="48" y="28" width="6" height="2" rx="1" fill="currentColor"/>
+        </symbol>
+        <symbol id="icon-code" viewBox="0 0 64 64">
+            <path fill="currentColor" d="M18 24l-10 8 10 8v-6h28v6l10-8-10-8v6H18v-6z"/>
+            <path fill="currentColor" d="M20 16l-4 4 4 4M44 16l4 4-4 4"/>
+            <line x1="28" y1="12" x2="36" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <rect x="8" y="10" width="48" height="44" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+        </symbol>
+        <symbol id="icon-mobile" viewBox="0 0 64 64">
+            <rect x="16" y="4" width="32" height="56" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+            <line x1="22" y1="10" x2="42" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <rect x="20" y="14" width="24" height="38" rx="2" fill="currentColor" opacity="0.2"/>
+            <circle cx="32" cy="56" r="2" fill="currentColor"/>
+        </symbol>
+        <symbol id="icon-lightning" viewBox="0 0 64 64">
+            <path fill="currentColor" d="M35 4l-18 28h14l-6 28 24-32H35l8-24z"/>
+        </symbol>
+        <symbol id="icon-target" viewBox="0 0 64 64">
+            <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="32" cy="32" r="20" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="32" cy="32" r="12" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="32" cy="32" r="4" fill="currentColor"/>
+        </symbol>
+        <symbol id="icon-shield" viewBox="0 0 64 64">
+            <path fill="currentColor" d="M32 4L10 14v16c0 13.6 9.4 26.4 22 30 12.6-3.6 22-16.4 22-30V14L32 4zm0 8l16 8v10c0 10.8-7.4 21-16 24-8.6-3-16-13.2-16-24V20l16-8z"/>
+            <path fill="currentColor" opacity="0.4" d="M28 28l-4 4 8 8 12-12-4-4-8 8-4-4z"/>
+        </symbol>
+        <symbol id="icon-menu" viewBox="0 0 24 24">
+            <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="icon-star" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </symbol>
+    </svg>
+
     <!-- Content Layer -->
     <div class="content-layer">
         <!-- Navigation -->
@@ -99,7 +142,7 @@
                 <!-- AI Solutions -->
                 <div class="service-card">
                     <div class="service-number">01</div>
-                    <div class="service-icon">🤖</div>
+                    <svg class="service-icon"><use href="#icon-ai"></use></svg>
                     <p class="service-category">INTELLIGENT AUTOMATION</p>
                     <h3 class="service-title">AI Solutions</h3>
                     <p class="service-description">Transform your business with cutting-edge artificial intelligence and automation</p>
@@ -114,7 +157,7 @@
                 <!-- Website Development -->
                 <div class="service-card">
                     <div class="service-number">02</div>
-                    <div class="service-icon">💻</div>
+                    <svg class="service-icon"><use href="#icon-code"></use></svg>
                     <p class="service-category">DIGITAL PRESENCE</p>
                     <h3 class="service-title">Website Development</h3>
                     <p class="service-description">Premium websites and web applications built for performance and conversion</p>
@@ -129,7 +172,7 @@
                 <!-- Social Media Management -->
                 <div class="service-card">
                     <div class="service-number">03</div>
-                    <div class="service-icon">📱</div>
+                    <svg class="service-icon"><use href="#icon-mobile"></use></svg>
                     <p class="service-category">BRAND GROWTH</p>
                     <h3 class="service-title">Social Media Management</h3>
                     <p class="service-description">Strategic social media solutions that drive engagement and revenue</p>
@@ -151,17 +194,17 @@
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 50px; margin-top: 60px; max-width: 1200px; margin-left: auto; margin-right: auto;">
                 <div style="background: rgba(0, 0, 0, 0.4) !important; backdrop-filter: blur(20px) !important; -webkit-backdrop-filter: blur(20px) !important; border: 1px solid rgba(255, 255, 255, 0.1) !important; padding: 50px; border-radius: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;">
-                    <div style="font-size: 2.5rem; margin-bottom: 20px;">⚡</div>
+                    <svg class="service-icon" style="width: 48px; height: 48px; margin-bottom: 20px;"><use href="#icon-lightning"></use></svg>
                     <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 15px; color: #fff;">Fast Turnaround</h3>
                     <p style="color: rgba(255,255,255,0.7); line-height: 1.7;">Most projects delivered in 2-8 weeks. We move fast without compromising on quality or attention to detail.</p>
                 </div>
                 <div style="background: rgba(0, 0, 0, 0.4) !important; backdrop-filter: blur(20px) !important; -webkit-backdrop-filter: blur(20px) !important; border: 1px solid rgba(255, 255, 255, 0.1) !important; padding: 50px; border-radius: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;">
-                    <div style="font-size: 2.5rem; margin-bottom: 20px;">🎯</div>
+                    <svg class="service-icon" style="width: 48px; height: 48px; margin-bottom: 20px;"><use href="#icon-target"></use></svg>
                     <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 15px; color: #fff;">ROI-Focused</h3>
                     <p style="color: rgba(255,255,255,0.7); line-height: 1.7;">Every solution is designed to generate measurable returns. We track metrics that actually matter to your bottom line.</p>
                 </div>
                 <div style="background: rgba(0, 0, 0, 0.4) !important; backdrop-filter: blur(20px) !important; -webkit-backdrop-filter: blur(20px) !important; border: 1px solid rgba(255, 255, 255, 0.1) !important; padding: 50px; border-radius: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;">
-                    <div style="font-size: 2.5rem; margin-bottom: 20px;">🛡️</div>
+                    <svg class="service-icon" style="width: 48px; height: 48px; margin-bottom: 20px;"><use href="#icon-shield"></use></svg>
                     <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 15px; color: #fff;">Full Ownership</h3>
                     <p style="color: rgba(255,255,255,0.7); line-height: 1.7;">You own 100% of code, designs, and content. No vendor lock-in, no recurring licensing fees, ever.</p>
                 </div>
@@ -360,6 +403,23 @@
                 <p style="color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 10px;">Swiss-based AI Agency | Compliant with nFADP</p>
             </div>
         </footer>
+
+        <!-- Cookie Consent Banner -->
+        <div id="cookieConsent" class="cookie-banner" style="display: none;">
+            <div class="cookie-content">
+                <div class="cookie-text">
+                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: #fff;">🍪 We Value Your Privacy</h4>
+                    <p style="font-size: 0.9rem; color: var(--white-80); line-height: 1.6; margin-bottom: 0;">
+                        We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept", you consent to our use of cookies.
+                        <a href="legal-pages/cookie-policy.html" style="color: var(--accent); text-decoration: underline;">Learn more</a>
+                    </p>
+                </div>
+                <div class="cookie-actions">
+                    <button id="acceptCookies" class="cookie-btn cookie-btn-accept">Accept All</button>
+                    <button id="rejectCookies" class="cookie-btn cookie-btn-reject">Reject</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Back to Top Button -->
