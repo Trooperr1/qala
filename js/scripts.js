@@ -630,3 +630,56 @@ if (document.readyState === 'loading') {
 } else {
     setTimeout(initScrollAnimations, 100);
 }
+
+// ============================================
+// INTERACTIVE PRICING CALCULATOR
+// ============================================
+function initPricingCalculator() {
+    const projectSelect = document.getElementById('calc-project-type');
+    const addons = document.querySelectorAll('.calc-addon');
+    const totalDisplay = document.getElementById('calc-total');
+
+    if (!projectSelect || !totalDisplay) return;
+
+    function calculateTotal() {
+        // Get base project cost
+        let total = parseInt(projectSelect.value) || 0;
+
+        // Add checked addons
+        addons.forEach(addon => {
+            if (addon.checked) {
+                total += parseInt(addon.value) || 0;
+            }
+        });
+
+        // Animate the number change
+        animateValue(totalDisplay, parseInt(totalDisplay.textContent.replace(/[^0-9]/g, '')) || 0, total, 500);
+    }
+
+    function animateValue(element, start, end, duration) {
+        const range = end - start;
+        const increment = range / (duration / 16); // 60fps
+        let current = start;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+                current = end;
+                clearInterval(timer);
+            }
+            element.textContent = Math.floor(current).toLocaleString('de-CH') + ' CHF';
+        }, 16);
+    }
+
+    // Event listeners
+    if (projectSelect) {
+        projectSelect.addEventListener('change', calculateTotal);
+    }
+
+    addons.forEach(addon => {
+        addon.addEventListener('change', calculateTotal);
+    });
+}
+
+// Initialize pricing calculator on page load
+document.addEventListener('DOMContentLoaded', initPricingCalculator);
