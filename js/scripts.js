@@ -157,26 +157,6 @@ function initSmoothScroll() {
     });
 }
 
-// GSAP Scroll Animations
-function initScrollAnimations() {
-    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.utils.toArray('.service-card, .glass-card, .portfolio-item').forEach((el, i) => {
-        gsap.from(el, {
-            scrollTrigger: {
-                trigger: el,
-                start: 'top 85%',
-            },
-            y: 80,
-            opacity: 0,
-            duration: 0.8,
-            delay: i * 0.1
-        });
-    });
-}
-
 // Mobile Menu Toggle
 function initMobileMenu() {
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
@@ -296,7 +276,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initFAQ();
     initBackToTop();
     initSmoothScroll();
-    initScrollAnimations();
     initMobileMenu();
     setActiveNavLink();
     initAnimatedCounters();
