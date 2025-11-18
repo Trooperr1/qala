@@ -591,56 +591,84 @@ section {
     }
 }
 
-.btn-primary, .btn-secondary {
-    padding: 18px 50px;
+/* ============================================
+   BUTTON HIERARCHY - PRIMARY, SECONDARY, TERTIARY
+   ============================================ */
+.btn-primary, .btn-secondary, .btn-tertiary {
+    padding: 16px 40px;
     text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: all 0.3s;
+    font-weight: var(--weight-semibold);
+    letter-spacing: 0.5px;
+    border-radius: var(--radius-full);
+    transition: transform var(--transition-base) var(--ease-out),
+                box-shadow var(--transition-base) var(--ease-out),
+                background var(--transition-base) var(--ease-out),
+                border-color var(--transition-base) var(--ease-out);
     display: inline-block;
     position: relative;
-    overflow: hidden;
+    cursor: pointer;
+    font-size: var(--text-base);
+    border: 2px solid transparent;
 }
 
+/* PRIMARY BUTTON - Main CTAs (Accent Gold) */
 .btn-primary {
-    background: #fff;
-    color: #000;
-    border: 2px solid #fff;
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
-}
-
-.btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
-    transition: left 0.5s;
-}
-
-.btn-primary:hover::before {
-    left: 100%;
+    background: var(--accent);
+    color: var(--black-100);
+    border-color: var(--accent);
+    box-shadow: 0 4px 16px var(--accent-20);
+    font-weight: var(--weight-bold);
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.5);
+    background: var(--accent-light);
+    border-color: var(--accent-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--accent-40);
 }
 
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px var(--accent-20);
+}
+
+/* SECONDARY BUTTON - Alternative actions (Outline) */
 .btn-secondary {
     background: transparent;
-    color: #fff;
-    border: 2px solid rgba(255,255,255,0.5);
-    backdrop-filter: blur(10px);
+    color: var(--white-100);
+    border-color: var(--white-50);
+    backdrop-filter: blur(var(--blur-sm));
+    -webkit-backdrop-filter: blur(var(--blur-sm));
 }
 
 .btn-secondary:hover {
-    background: rgba(255,255,255,0.1);
-    border-color: #fff;
-    transform: translateY(-3px);
+    background: var(--white-10);
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px var(--white-20);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+}
+
+/* TERTIARY BUTTON - Text link style (Minimal) */
+.btn-tertiary {
+    background: transparent;
+    color: var(--white-80);
+    border-color: transparent;
+    padding: 12px 24px;
+    font-weight: var(--weight-medium);
+}
+
+.btn-tertiary:hover {
+    color: var(--accent);
+    background: var(--white-5);
+}
+
+.btn-tertiary:active {
+    background: var(--white-10);
 }
 
 /* Services Grid */
@@ -1772,5 +1800,107 @@ footer a:hover {
     .client-logo {
         font-size: var(--text-base);
         padding: 15px;
+    }
+}
+
+/* ============================================
+   FORM VALIDATION & LOADING STATES
+   ============================================ */
+.form-error {
+    display: block;
+    color: #ff6b6b;
+    font-size: var(--text-sm);
+    margin-top: 6px;
+    min-height: 20px;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.form-error.show {
+    opacity: 1;
+}
+
+.form-input.error,
+.form-textarea.error,
+.form-select.error {
+    border-color: #ff6b6b !important;
+    box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.1);
+}
+
+.form-input.success,
+.form-textarea.success,
+.form-select.success {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 2px var(--accent-20);
+}
+
+/* Loading Spinner */
+.spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.form-submit-btn.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.form-submit-btn.loading .btn-text {
+    display: none;
+}
+
+.form-submit-btn.loading .btn-loading {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Focus States */
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-20);
+    outline: none;
+}
+
+.form-label {
+    transition: color var(--transition-fast);
+}
+
+.form-group:focus-within .form-label {
+    color: var(--accent);
+}
+
+/* ============================================
+   ACCESSIBILITY - REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .service-icon,
+    .glass-card,
+    .service-card,
+    .client-logo,
+    .btn-primary,
+    .btn-secondary,
+    .btn-tertiary {
+        transform: none !important;
     }
 }

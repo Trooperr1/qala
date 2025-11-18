@@ -398,3 +398,235 @@ function setActiveNavigation() {
 
 // Initialize active navigation on page load
 document.addEventListener('DOMContentLoaded', setActiveNavigation);
+
+// ============================================
+// FORM VALIDATION & UX ENHANCEMENTS
+// ============================================
+function initFormValidation() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const submitBtn = document.getElementById('submitBtn');
+
+    // Real-time validation functions
+    function validateName(input) {
+        const error = document.getElementById('name-error');
+        if (!input.value.trim()) {
+            showError(input, error, 'Name is required');
+            return false;
+        }
+        if (input.value.trim().length < 2) {
+            showError(input, error, 'Name must be at least 2 characters');
+            return false;
+        }
+        showSuccess(input, error);
+        return true;
+    }
+
+    function validateEmail(input) {
+        const error = document.getElementById('email-error');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (!input.value.trim()) {
+            showError(input, error, 'Email is required');
+            return false;
+        }
+        if (!emailRegex.test(input.value)) {
+            showError(input, error, 'Please enter a valid email address');
+            return false;
+        }
+        showSuccess(input, error);
+        return true;
+    }
+
+    function validateMessage(input) {
+        const error = document.getElementById('message-error');
+        if (!input.value.trim()) {
+            showError(input, error, 'Message is required');
+            return false;
+        }
+        if (input.value.trim().length < 10) {
+            showError(input, error, 'Message must be at least 10 characters');
+            return false;
+        }
+        showSuccess(input, error);
+        return true;
+    }
+
+    function showError(input, errorElement, message) {
+        input.classList.add('error');
+        input.classList.remove('success');
+        errorElement.textContent = message;
+        errorElement.classList.add('show');
+    }
+
+    function showSuccess(input, errorElement) {
+        input.classList.remove('error');
+        input.classList.add('success');
+        errorElement.textContent = '';
+        errorElement.classList.remove('show');
+    }
+
+    // Add real-time validation on blur
+    if (nameInput) {
+        nameInput.addEventListener('blur', () => validateName(nameInput));
+        nameInput.addEventListener('input', () => {
+            if (nameInput.classList.contains('error')) {
+                validateName(nameInput);
+            }
+        });
+    }
+
+    if (emailInput) {
+        emailInput.addEventListener('blur', () => validateEmail(emailInput));
+        emailInput.addEventListener('input', () => {
+            if (emailInput.classList.contains('error')) {
+                validateEmail(emailInput);
+            }
+        });
+    }
+
+    if (messageInput) {
+        messageInput.addEventListener('blur', () => validateMessage(messageInput));
+        messageInput.addEventListener('input', () => {
+            if (messageInput.classList.contains('error')) {
+                validateMessage(messageInput);
+            }
+        });
+    }
+
+    // Form submission with loading state
+    form.addEventListener('submit', function(e) {
+        // Validate all fields before submit
+        const isNameValid = nameInput ? validateName(nameInput) : true;
+        const isEmailValid = emailInput ? validateEmail(emailInput) : true;
+        const isMessageValid = messageInput ? validateMessage(messageInput) : true;
+
+        if (!isNameValid || !isEmailValid || !isMessageValid) {
+            e.preventDefault();
+            return false;
+        }
+
+        // Show loading state
+        if (submitBtn) {
+            submitBtn.classList.add('loading');
+        }
+
+        // Note: FormSubmit.co will handle the actual submission and redirect
+        // The loading state will be visible until redirect happens
+    });
+}
+
+// Initialize form validation on page load
+document.addEventListener('DOMContentLoaded', initFormValidation);
+
+// ============================================
+// GSAP SCROLL ANIMATIONS
+// ============================================
+function initScrollAnimations() {
+    // Check if GSAP and ScrollTrigger are loaded
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+        console.log('GSAP or ScrollTrigger not loaded');
+        return;
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Fade in sections on scroll
+    gsap.utils.toArray('section').forEach((section, index) => {
+        // Skip first section (hero)
+        if (index === 0) return;
+
+        gsap.from(section, {
+            scrollTrigger: {
+                trigger: section,
+                start: 'top 85%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 0,
+            y: 50,
+            duration: 0.8,
+            ease: 'power3.out'
+        });
+    });
+
+    // Stagger animate service cards
+    gsap.utils.toArray('.service-card').forEach((card) => {
+        gsap.from(card, {
+            scrollTrigger: {
+                trigger: card,
+                start: 'top 90%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 0,
+            y: 30,
+            duration: 0.6,
+            ease: 'power2.out'
+        });
+    });
+
+    // Stagger animate glass cards
+    gsap.utils.toArray('.glass-card').forEach((card, index) => {
+        gsap.from(card, {
+            scrollTrigger: {
+                trigger: card,
+                start: 'top 90%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 0,
+            y: 30,
+            duration: 0.6,
+            delay: index * 0.1,
+            ease: 'power2.out'
+        });
+    });
+
+    // Animate stats counters when in view
+    gsap.utils.toArray('.counter').forEach((counter) => {
+        const target = parseFloat(counter.getAttribute('data-target'));
+        
+        gsap.from(counter, {
+            scrollTrigger: {
+                trigger: counter,
+                start: 'top 85%',
+                once: true
+            },
+            textContent: 0,
+            duration: 2,
+            ease: 'power1.out',
+            snap: { textContent: target > 10 ? 1 : 0.1 },
+            onUpdate: function() {
+                const val = parseFloat(this.targets()[0].textContent);
+                counter.textContent = target > 10 ? Math.ceil(val) : val.toFixed(1);
+            }
+        });
+    });
+
+    // Fade in client logos with stagger
+    gsap.utils.toArray('.client-logo').forEach((logo, index) => {
+        gsap.from(logo, {
+            scrollTrigger: {
+                trigger: logo,
+                start: 'top 90%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 0,
+            scale: 0.8,
+            duration: 0.5,
+            delay: index * 0.08,
+            ease: 'back.out(1.2)'
+        });
+    });
+}
+
+// Initialize scroll animations when GSAP is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(initScrollAnimations, 100);
+    });
+} else {
+    setTimeout(initScrollAnimations, 100);
+}
