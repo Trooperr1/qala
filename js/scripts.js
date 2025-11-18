@@ -304,3 +304,70 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Make googleTranslateElementInit available globally
 window.googleTranslateElementInit = googleTranslateElementInit;
+
+// ============================================
+// COOKIE CONSENT BANNER
+// ============================================
+function initCookieConsent() {
+    const cookieBanner = document.getElementById('cookieConsent');
+    const acceptBtn = document.getElementById('acceptCookies');
+    const rejectBtn = document.getElementById('rejectCookies');
+
+    if (!cookieBanner) return;
+
+    // Check if user has already made a choice
+    const cookieChoice = localStorage.getItem('cookieConsent');
+
+    if (!cookieChoice) {
+        // Show banner after a short delay for better UX
+        setTimeout(() => {
+            cookieBanner.style.display = 'block';
+        }, 1000);
+    }
+
+    // Accept cookies
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieConsentDate', new Date().toISOString());
+            hideBanner();
+            // Enable analytics/tracking here if needed
+            console.log('Cookies accepted');
+        });
+    }
+
+    // Reject cookies
+    if (rejectBtn) {
+        rejectBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            localStorage.setItem('cookieConsentDate', new Date().toISOString());
+            hideBanner();
+            console.log('Cookies rejected');
+        });
+    }
+
+    function hideBanner() {
+        cookieBanner.style.animation = 'slideDownFade 0.3s ease-out forwards';
+        setTimeout(() => {
+            cookieBanner.style.display = 'none';
+        }, 300);
+    }
+}
+
+// Add slideDownFade animation dynamically
+const styleSheet = document.styleSheets[0];
+const slideDownAnimation = `
+@keyframes slideDownFade {
+    from {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(30px);
+    }
+}`;
+styleSheet.insertRule(slideDownAnimation, styleSheet.cssRules.length);
+
+// Initialize cookie consent on page load
+document.addEventListener('DOMContentLoaded', initCookieConsent);

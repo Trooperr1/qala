@@ -51,6 +51,49 @@
     <link rel="stylesheet" href="css/transitions.css">
 </head>
 <body>
+    <!-- SVG Icon Sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="icon-ai" viewBox="0 0 64 64">
+            <path fill="currentColor" d="M32 8c-2.2 0-4 1.8-4 4v4h-8c-2.2 0-4 1.8-4 4v28c0 2.2 1.8 4 4 4h24c2.2 0 4-1.8 4-4V20c0-2.2-1.8-4-4-4h-8v-4c0-2.2-1.8-4-4-4zm-8 16h4v4h-4v-4zm12 0h4v4h-4v-4zM20 36h24v4H20v-4z"/>
+            <circle cx="32" cy="6" r="2" fill="currentColor"/>
+            <rect x="10" y="28" width="6" height="2" rx="1" fill="currentColor"/>
+            <rect x="48" y="28" width="6" height="2" rx="1" fill="currentColor"/>
+        </symbol>
+        <symbol id="icon-code" viewBox="0 0 64 64">
+            <path fill="currentColor" d="M18 24l-10 8 10 8v-6h28v6l10-8-10-8v6H18v-6z"/>
+            <path fill="currentColor" d="M20 16l-4 4 4 4M44 16l4 4-4 4"/>
+            <line x1="28" y1="12" x2="36" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <rect x="8" y="10" width="48" height="44" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+        </symbol>
+        <symbol id="icon-mobile" viewBox="0 0 64 64">
+            <rect x="16" y="4" width="32" height="56" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+            <line x1="22" y1="10" x2="42" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <rect x="20" y="14" width="24" height="38" rx="2" fill="currentColor" opacity="0.2"/>
+            <circle cx="32" cy="56" r="2" fill="currentColor"/>
+        </symbol>
+        <symbol id="icon-lightning" viewBox="0 0 64 64">
+            <path fill="currentColor" d="M35 4l-18 28h14l-6 28 24-32H35l8-24z"/>
+        </symbol>
+        <symbol id="icon-target" viewBox="0 0 64 64">
+            <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="32" cy="32" r="20" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="32" cy="32" r="12" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="32" cy="32" r="4" fill="currentColor"/>
+        </symbol>
+        <symbol id="icon-shield" viewBox="0 0 64 64">
+            <path fill="currentColor" d="M32 4L10 14v16c0 13.6 9.4 26.4 22 30 12.6-3.6 22-16.4 22-30V14L32 4zm0 8l16 8v10c0 10.8-7.4 21-16 24-8.6-3-16-13.2-16-24V20l16-8z"/>
+            <path fill="currentColor" opacity="0.4" d="M28 28l-4 4 8 8 12-12-4-4-8 8-4-4z"/>
+        </symbol>
+        <symbol id="icon-menu" viewBox="0 0 24 24">
+            <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="icon-star" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </symbol>
+    </svg>
+
     <!-- 3D Canvas Background -->
     <canvas id="canvas-3d"></canvas>
 
@@ -78,7 +121,9 @@
             <div style="display: flex; align-items: center; gap: 25px;">
                 <div id="google_translate_element" style="opacity: 0.8;"></div>
                 <a href="contact.html" class="nav-cta" style="padding: 12px 30px; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.5px;">Get Started</a>
-                <button class="mobile-menu-toggle" id="mobileMenuToggle" style="font-size: 1.5rem;">☰</button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <svg class="icon icon-md"><use href="#icon-menu"></use></svg>
+                </button>
             </div>
         </nav>
 
@@ -142,21 +187,21 @@
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; margin-top: 60px;">
                 <div class="service-card" style="padding: 50px 40px;">
-                    <div class="service-icon">🤖</div>
+                    <svg class="service-icon"><use href="#icon-ai"></use></svg>
                     <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 15px; color: #fff;">AI Solutions</h3>
                     <p style="color: rgba(255,255,255,0.7); margin-bottom: 25px;">AI-powered automation that reduces costs and scales your business</p>
                     <a href="services.html" class="btn-secondary" style="padding: 12px 25px; font-size: 0.8rem;">Learn More →</a>
                 </div>
 
                 <div class="service-card" style="padding: 50px 40px;">
-                    <div class="service-icon">💻</div>
+                    <svg class="service-icon"><use href="#icon-code"></use></svg>
                     <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 15px; color: #fff;">Web Development</h3>
                     <p style="color: rgba(255,255,255,0.7); margin-bottom: 25px;">Premium websites built for conversions and measurable growth</p>
                     <a href="services.html" class="btn-secondary" style="padding: 12px 25px; font-size: 0.8rem;">Learn More →</a>
                 </div>
 
                 <div class="service-card" style="padding: 50px 40px;">
-                    <div class="service-icon">📱</div>
+                    <svg class="service-icon"><use href="#icon-mobile"></use></svg>
                     <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 15px; color: #fff;">Social Media</h3>
                     <p style="color: rgba(255,255,255,0.7); margin-bottom: 25px;">Strategic campaigns that build your brand and drive engagement</p>
                     <a href="services.html" class="btn-secondary" style="padding: 12px 25px; font-size: 0.8rem;">Learn More →</a>
@@ -172,17 +217,17 @@
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 60px; margin-top: 60px; max-width: 1200px; margin-left: auto; margin-right: auto;">
                 <div style="text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 20px;">⚡</div>
+                    <svg class="icon-lg" style="margin: 0 auto 20px; color: var(--white-90);"><use href="#icon-lightning"></use></svg>
                     <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 15px; color: #fff;">Lightning Fast Delivery</h3>
                     <p style="color: rgba(255,255,255,0.7); line-height: 1.7;">Projects completed in 2-8 weeks. Fast execution without compromise.</p>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 20px;">🎯</div>
+                    <svg class="icon-lg" style="margin: 0 auto 20px; color: var(--white-90);"><use href="#icon-target"></use></svg>
                     <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 15px; color: #fff;">Results-Driven Approach</h3>
                     <p style="color: rgba(255,255,255,0.7); line-height: 1.7;">Focused on ROI, conversions, and measurable business growth.</p>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 20px;">🛡️</div>
+                    <svg class="icon-lg" style="margin: 0 auto 20px; color: var(--white-90);"><use href="#icon-shield"></use></svg>
                     <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 15px; color: #fff;">You Own Everything</h3>
                     <p style="color: rgba(255,255,255,0.7); line-height: 1.7;">Full ownership of code, designs, and assets. No lock-in, ever.</p>
                 </div>
@@ -197,21 +242,39 @@
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; margin-top: 60px;">
                 <div class="glass-card" style="padding: 50px;">
-                    <div style="margin-bottom: 20px; color: #fff; font-size: 2rem;">★★★★★</div>
+                    <div style="margin-bottom: 20px; display: flex; gap: 4px; color: var(--accent);">
+                        <svg class="icon-sm"><use href="#icon-star"></use></svg>
+                        <svg class="icon-sm"><use href="#icon-star"></use></svg>
+                        <svg class="icon-sm"><use href="#icon-star"></use></svg>
+                        <svg class="icon-sm"><use href="#icon-star"></use></svg>
+                        <svg class="icon-sm"><use href="#icon-star"></use></svg>
+                    </div>
                     <p style="color: rgba(255,255,255,0.8); font-style: italic; line-height: 1.8; margin-bottom: 20px;">"Reduced support tickets by 73%, ROI in 4 months. Game-changer for our business."</p>
                     <p style="color: rgba(255,255,255,0.9); font-weight: 600;">Sarah Chen</p>
                     <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem;">E-commerce Director</p>
                 </div>
 
                 <div class="glass-card" style="padding: 50px;">
-                    <div style="margin-bottom: 20px; color: #fff; font-size: 2rem;">★★★★★</div>
+                    <div style="margin-bottom: 20px; display: flex; gap: 4px; color: var(--accent);">
+                        <svg class="icon-sm"><use href="#icon-star"></use></svg>
+                        <svg class="icon-sm"><use href="#icon-star"></use></svg>
+                        <svg class="icon-sm"><use href="#icon-star"></use></svg>
+                        <svg class="icon-sm"><use href="#icon-star"></use></svg>
+                        <svg class="icon-sm"><use href="#icon-star"></use></svg>
+                    </div>
                     <p style="color: rgba(255,255,255,0.8); font-style: italic; line-height: 1.8; margin-bottom: 20px;">"$180K revenue in 6 months from zero online presence. Exceeded every expectation."</p>
                     <p style="color: rgba(255,255,255,0.9); font-weight: 600;">Marcus Rodriguez</p>
                     <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem;">Restaurant Owner</p>
                 </div>
 
                 <div class="glass-card" style="padding: 50px;">
-                    <div style="margin-bottom: 20px; color: #fff; font-size: 2rem;">★★★★★</div>
+                    <div style="margin-bottom: 20px; display: flex; gap: 4px; color: var(--accent);">
+                        <svg class="icon-sm"><use href="#icon-star"></use></svg>
+                        <svg class="icon-sm"><use href="#icon-star"></use></svg>
+                        <svg class="icon-sm"><use href="#icon-star"></use></svg>
+                        <svg class="icon-sm"><use href="#icon-star"></use></svg>
+                        <svg class="icon-sm"><use href="#icon-star"></use></svg>
+                    </div>
                     <p style="color: rgba(255,255,255,0.8); font-style: italic; line-height: 1.8; margin-bottom: 20px;">"Voice agent recovered $85K in missed appointments. Professional, fast, exactly what we needed."</p>
                     <p style="color: rgba(255,255,255,0.9); font-weight: 600;">Dr. Jennifer Park</p>
                     <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem;">Medical Practice Owner</p>
@@ -267,6 +330,23 @@
                 <p style="color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 10px;">Swiss-based AI Agency | Compliant with nFADP</p>
             </div>
         </footer>
+
+        <!-- Cookie Consent Banner -->
+        <div id="cookieConsent" class="cookie-banner" style="display: none;">
+            <div class="cookie-content">
+                <div class="cookie-text">
+                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: #fff;">🍪 We Value Your Privacy</h4>
+                    <p style="font-size: 0.9rem; color: var(--white-80); line-height: 1.6; margin-bottom: 0;">
+                        We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept", you consent to our use of cookies.
+                        <a href="legal-pages/cookie-policy.html" style="color: var(--accent); text-decoration: underline;">Learn more</a>
+                    </p>
+                </div>
+                <div class="cookie-actions">
+                    <button id="acceptCookies" class="cookie-btn cookie-btn-accept">Accept All</button>
+                    <button id="rejectCookies" class="cookie-btn cookie-btn-reject">Reject</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Back to Top Button -->
