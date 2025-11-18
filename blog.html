@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - JAFF STUDIO | AI Insights & Digital Marketing Tips</title>
+    <meta name="description" content="Expert insights on AI, web development, and digital marketing from JAFF STUDIO. Learn strategies to grow your business.">
+    <meta name="keywords" content="AI blog, digital marketing, web development, chatbot tips, SEO, Switzerland">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Blog - JAFF STUDIO | AI & Digital Marketing Insights">
+    <meta property="og:description" content="Expert insights on AI, web development, and digital marketing to grow your business.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jaffstudio.ch/blog.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Three.js for 3D Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Google Translate -->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+    <!-- SVG Icon Sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="icon-menu" viewBox="0 0 24 24">
+            <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </symbol>
+    </svg>
+
+    <!-- 3D Canvas Background -->
+    <canvas id="canvas-3d"></canvas>
+
+    <!-- Gradient Overlay -->
+    <div class="gradient-overlay"></div>
+
+    <!-- Floating Orbs -->
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="floating-orb orb-3"></div>
+
+    <!-- Content Layer -->
+    <div class="content-layer">
+        <!-- Navigation -->
+        <nav style="padding: 25px 5%; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); background: rgba(0, 0, 0, 0.3); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+            <a href="index.html" class="logo" style="font-size: 1.5rem; font-weight: 900; letter-spacing: 1px;">JAFF STUDIO</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" style="font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px;">Home</a></li>
+                <li><a href="about.html" style="font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px;">About</a></li>
+                <li><a href="services.html" style="font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px;">Services</a></li>
+                <li><a href="portfolio.html" style="font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px;">Portfolio</a></li>
+                <li><a href="pricing.html" style="font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px;">Pricing</a></li>
+                <li><a href="blog.html" class="active" style="font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px;">Blog</a></li>
+                <li><a href="faq.html" style="font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px;">FAQ</a></li>
+                <li><a href="contact.html" style="font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px;">Contact</a></li>
+            </ul>
+            <div style="display: flex; align-items: center; gap: 25px;">
+                <div id="google_translate_element" style="opacity: 0.8;"></div>
+                <a href="contact.html" class="nav-cta" style="padding: 12px 30px; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.5px;">Get Started</a>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <svg class="icon icon-md"><use href="#icon-menu"></use></svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html" class="mobile-menu-link">Home</a>
+            <a href="about.html" class="mobile-menu-link">About</a>
+            <a href="services.html" class="mobile-menu-link">Services</a>
+            <a href="portfolio.html" class="mobile-menu-link">Portfolio</a>
+            <a href="pricing.html" class="mobile-menu-link">Pricing</a>
+            <a href="blog.html" class="mobile-menu-link active">Blog</a>
+            <a href="faq.html" class="mobile-menu-link">FAQ</a>
+            <a href="contact.html" class="mobile-menu-link">Contact</a>
+            <a href="contact.html" class="btn-primary" style="margin-top: 20px; text-align: center;">Get Started</a>
+        </div>
+
+        <!-- Hero Section -->
+        <section style="padding: 140px 20px 80px; max-width: 1200px; margin: 0 auto; text-align: center;">
+            <p class="section-eyebrow" style="color: rgba(255,255,255,0.7);">INSIGHTS & EXPERTISE</p>
+            <h1 style="font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; color: #fff; margin-bottom: 25px; line-height: 1.1;">
+                AI & Digital Marketing Blog
+            </h1>
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 700px; margin: 0 auto 40px;">
+                Expert insights, practical tips, and the latest trends to help you grow your business with technology
+            </p>
+
+            <!-- Blog Categories -->
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 40px;">
+                <button class="blog-filter active" data-filter="all" style="padding: 10px 24px; background: var(--accent); color: #000; border: none; border-radius: 25px; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.3s;">
+                    All Posts
+                </button>
+                <button class="blog-filter" data-filter="ai" style="padding: 10px 24px; background: rgba(255, 255, 255, 0.1); color: var(--white); border: 1px solid var(--white-20); border-radius: 25px; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.3s;">
+                    AI & Automation
+                </button>
+                <button class="blog-filter" data-filter="web" style="padding: 10px 24px; background: rgba(255, 255, 255, 0.1); color: var(--white); border: 1px solid var(--white-20); border-radius: 25px; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.3s;">
+                    Web Development
+                </button>
+                <button class="blog-filter" data-filter="marketing" style="padding: 10px 24px; background: rgba(255, 255, 255, 0.1); color: var(--white); border: 1px solid var(--white-20); border-radius: 25px; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.3s;">
+                    Digital Marketing
+                </button>
+            </div>
+        </section>
+
+        <!-- Blog Posts Grid -->
+        <section style="padding: 60px 20px 120px; max-width: 1400px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px;">
+
+                <!-- Blog Post 1 -->
+                <article class="glass-card blog-post" data-category="ai" style="padding: 0; overflow: hidden; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="height: 220px; background: linear-gradient(135deg, var(--accent) 0%, #fff 100%); position: relative; overflow: hidden;">
+                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-robot" style="font-size: 4rem; color: rgba(255,255,255,0.9);"></i>
+                        </div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <span style="font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">AI & AUTOMATION</span>
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin: 15px 0; line-height: 1.3;">
+                            How AI Chatbots Can Save Your Business 60% on Support Costs
+                        </h3>
+                        <p style="color: var(--white-80); line-height: 1.7; margin-bottom: 20px;">
+                            Discover how modern AI chatbots are revolutionizing customer service, reducing costs, and improving satisfaction rates. Real case studies included.
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--white-10);">
+                            <span style="font-size: 0.85rem; color: var(--white-60);">
+                                <i class="far fa-calendar"></i> Jan 15, 2025
+                            </span>
+                            <span style="font-size: 0.85rem; color: var(--white-60);">
+                                <i class="far fa-clock"></i> 5 min read
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="glass-card blog-post" data-category="web" style="padding: 0; overflow: hidden; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="height: 220px; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); position: relative; overflow: hidden;">
+                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-code" style="font-size: 4rem; color: rgba(255,255,255,0.9);"></i>
+                        </div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <span style="font-size: 0.75rem; color: #8b5cf6; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">WEB DEVELOPMENT</span>
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin: 15px 0; line-height: 1.3;">
+                            10 Must-Have Features for High-Converting E-commerce Sites in 2025
+                        </h3>
+                        <p style="color: var(--white-80); line-height: 1.7; margin-bottom: 20px;">
+                            From AI product recommendations to one-click checkout - learn what features top-performing e-commerce sites use to maximize conversions.
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--white-10);">
+                            <span style="font-size: 0.85rem; color: var(--white-60);">
+                                <i class="far fa-calendar"></i> Jan 12, 2025
+                            </span>
+                            <span style="font-size: 0.85rem; color: var(--white-60);">
+                                <i class="far fa-clock"></i> 7 min read
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="glass-card blog-post" data-category="marketing" style="padding: 0; overflow: hidden; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="height: 220px; background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%); position: relative; overflow: hidden;">
+                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-chart-line" style="font-size: 4rem; color: rgba(255,255,255,0.9);"></i>
+                        </div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <span style="font-size: 0.75rem; color: #f59e0b; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">DIGITAL MARKETING</span>
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin: 15px 0; line-height: 1.3;">
+                            Social Media ROI: How to Measure What Actually Matters
+                        </h3>
+                        <p style="color: var(--white-80); line-height: 1.7; margin-bottom: 20px;">
+                            Vanity metrics vs. real ROI. Learn which KPIs to track and how to prove that your social media efforts drive actual business results.
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--white-10);">
+                            <span style="font-size: 0.85rem; color: var(--white-60);">
+                                <i class="far fa-calendar"></i> Jan 10, 2025
+                            </span>
+                            <span style="font-size: 0.85rem; color: var(--white-60);">
+                                <i class="far fa-clock"></i> 6 min read
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="glass-card blog-post" data-category="ai" style="padding: 0; overflow: hidden; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="height: 220px; background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%); position: relative; overflow: hidden;">
+                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-phone-volume" style="font-size: 4rem; color: rgba(255,255,255,0.9);"></i>
+                        </div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <span style="font-size: 0.75rem; color: #10b981; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">AI & AUTOMATION</span>
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin: 15px 0; line-height: 1.3;">
+                            Voice AI Agents: The Future of Customer Service
+                        </h3>
+                        <p style="color: var(--white-80); line-height: 1.7; margin-bottom: 20px;">
+                            Natural-sounding AI voices that can handle phone calls 24/7. Learn how voice agents are transforming appointment booking and customer support.
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--white-10);">
+                            <span style="font-size: 0.85rem; color: var(--white-60);">
+                                <i class="far fa-calendar"></i> Jan 8, 2025
+                            </span>
+                            <span style="font-size: 0.85rem; color: var(--white-60);">
+                                <i class="far fa-clock"></i> 8 min read
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article class="glass-card blog-post" data-category="web" style="padding: 0; overflow: hidden; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="height: 220px; background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%); position: relative; overflow: hidden;">
+                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-mobile-alt" style="font-size: 4rem; color: rgba(255,255,255,0.9);"></i>
+                        </div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <span style="font-size: 0.75rem; color: #ec4899; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">WEB DEVELOPMENT</span>
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin: 15px 0; line-height: 1.3;">
+                            Mobile-First Design: Why It's Non-Negotiable in 2025
+                        </h3>
+                        <p style="color: var(--white-80); line-height: 1.7; margin-bottom: 20px;">
+                            With 70% of web traffic coming from mobile devices, a mobile-first approach isn't optional. Here's how to get it right from the start.
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--white-10);">
+                            <span style="font-size: 0.85rem; color: var(--white-60);">
+                                <i class="far fa-calendar"></i> Jan 5, 2025
+                            </span>
+                            <span style="font-size: 0.85rem; color: var(--white-60);">
+                                <i class="far fa-clock"></i> 6 min read
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 6 -->
+                <article class="glass-card blog-post" data-category="marketing" style="padding: 0; overflow: hidden; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="height: 220px; background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); position: relative; overflow: hidden;">
+                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-search" style="font-size: 4rem; color: rgba(255,255,255,0.9);"></i>
+                        </div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <span style="font-size: 0.75rem; color: #06b6d4; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">DIGITAL MARKETING</span>
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin: 15px 0; line-height: 1.3;">
+                            SEO in 2025: What's Changed and What Still Works
+                        </h3>
+                        <p style="color: var(--white-80); line-height: 1.7; margin-bottom: 20px;">
+                            Google's algorithm evolves constantly. Stay ahead with these proven SEO strategies that work in 2025 and beyond.
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--white-10);">
+                            <span style="font-size: 0.85rem; color: var(--white-60);">
+                                <i class="far fa-calendar"></i> Jan 3, 2025
+                            </span>
+                            <span style="font-size: 0.85rem; color: var(--white-60);">
+                                <i class="far fa-clock"></i> 9 min read
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Newsletter CTA -->
+        <section style="padding: 80px 20px; max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="glass-card" style="padding: 60px 40px;">
+                <h2 style="font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 20px;">Get Weekly Insights</h2>
+                <p style="font-size: 1.1rem; color: var(--white-80); margin-bottom: 40px;">
+                    Join 500+ business owners receiving actionable tips on AI, web development, and digital marketing every week.
+                </p>
+                <form style="display: flex; gap: 15px; max-width: 500px; margin: 0 auto; flex-wrap: wrap;">
+                    <input type="email" placeholder="Enter your email" required style="flex: 1; min-width: 250px; padding: 16px 24px; border-radius: var(--radius-md); background: rgba(255,255,255,0.05); border: 1px solid var(--white-20); color: #fff; font-size: 1rem;">
+                    <button type="submit" class="btn-primary" style="padding: 16px 32px; white-space: nowrap;">Subscribe Free</button>
+                </form>
+                <p style="font-size: 0.85rem; color: var(--white-60); margin-top: 20px;">No spam. Unsubscribe anytime.</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-top: 1px solid rgba(255, 255, 255, 0.05); padding: 80px 5% 40px;">
+            <div style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 60px; margin-bottom: 60px;">
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 900; color: #fff; margin-bottom: 20px;">JAFF STUDIO</h3>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 25px;">Swiss-based AI agency specializing in chatbots, voice agents, websites, and social media management.</p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="width: 45px; height: 45px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; transition: all 0.3s;" onmouseover="this.style.background='var(--accent)'; this.style.color='#000'" onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.color='#fff'">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" style="width: 45px; height: 45px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; transition: all 0.3s;" onmouseover="this.style.background='var(--accent)'; this.style.color='#000'" onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.color='#fff'">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" style="width: 45px; height: 45px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; transition: all 0.3s;" onmouseover="this.style.background='var(--accent)'; this.style.color='#000'" onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.color='#fff'">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">Services</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 12px;"><a href="services.html" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">AI Chatbots</a></li>
+                        <li style="margin-bottom: 12px;"><a href="services.html" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Voice Agents</a></li>
+                        <li style="margin-bottom: 12px;"><a href="services.html" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Website Development</a></li>
+                        <li style="margin-bottom: 12px;"><a href="services.html" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Social Media Management</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">Company</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 12px;"><a href="about.html" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">About</a></li>
+                        <li style="margin-bottom: 12px;"><a href="portfolio.html" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Portfolio</a></li>
+                        <li style="margin-bottom: 12px;"><a href="blog.html" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Blog</a></li>
+                        <li style="margin-bottom: 12px;"><a href="contact.html" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">Contact</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 12px; color: rgba(255,255,255,0.7);"><i class="fas fa-envelope" style="margin-right: 10px; color: var(--accent);"></i>info@jaffstudio.ch</li>
+                        <li style="margin-bottom: 12px; color: rgba(255,255,255,0.7);"><i class="fas fa-phone" style="margin-right: 10px; color: var(--accent);"></i>+41 XX XXX XX XX</li>
+                        <li style="margin-bottom: 12px; color: rgba(255,255,255,0.7);"><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--accent);"></i>Switzerland</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px; text-align: center;">
+                <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-bottom: 20px; font-size: 0.9rem;">
+                    <a href="legal-pages/privacy.html" style="color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s;">Privacy Policy</a>
+                    <span style="color: rgba(255,255,255,0.3);">|</span>
+                    <a href="legal-pages/terms.html" style="color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s;">Terms of Service</a>
+                    <span style="color: rgba(255,255,255,0.3);">|</span>
+                    <a href="legal-pages/cookie-policy.html" style="color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s;">Cookie Policy</a>
+                    <span style="color: rgba(255,255,255,0.3);">|</span>
+                    <a href="legal-pages/disclaimer.html" style="color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s;">Disclaimer</a>
+                    <span style="color: rgba(255,255,255,0.3);">|</span>
+                    <a href="legal-pages/imprint.html" style="color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s;">Imprint</a>
+                    <span style="color: rgba(255,255,255,0.3);">|</span>
+                    <a href="legal-pages/ai-disclaimer.html" style="color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s;">AI Disclaimer</a>
+                </div>
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">&copy; 2025 JAFF STUDIO. All rights reserved.</p>
+                <p style="color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 10px;">Swiss-based AI Agency | Compliant with nFADP</p>
+            </div>
+        </footer>
+
+        <!-- Cookie Consent Banner -->
+        <div id="cookieConsent" class="cookie-banner" style="display: none;">
+            <div class="cookie-content">
+                <div class="cookie-text">
+                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: #fff;">🍪 We Value Your Privacy</h4>
+                    <p style="font-size: 0.9rem; color: var(--white-80); line-height: 1.6; margin-bottom: 0;">
+                        We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept", you consent to our use of cookies.
+                        <a href="legal-pages/cookie-policy.html" style="color: var(--accent); text-decoration: underline;">Learn more</a>
+                    </p>
+                </div>
+                <div class="cookie-actions">
+                    <button id="acceptCookies" class="cookie-btn cookie-btn-accept">Accept All</button>
+                    <button id="rejectCookies" class="cookie-btn cookie-btn-reject">Reject</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top">↑</button>
+
+    <!-- WhatsApp Widget -->
+    <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-widget">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script defer src="js/scripts.js"></script>
+    <script defer src="js/lightbox.js"></script>
+    <script defer src="js/livechat.js"></script>
+
+    <!-- Blog Filter Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.blog-filter');
+            const blogPosts = document.querySelectorAll('.blog-post');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filter = button.getAttribute('data-filter');
+
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.style.background = 'rgba(255, 255, 255, 0.1)';
+                        btn.style.color = 'var(--white)';
+                        btn.style.border = '1px solid var(--white-20)';
+                    });
+
+                    button.classList.add('active');
+                    button.style.background = 'var(--accent)';
+                    button.style.color = '#000';
+                    button.style.border = 'none';
+
+                    // Filter posts
+                    blogPosts.forEach(post => {
+                        const category = post.getAttribute('data-category');
+
+                        if (filter === 'all' || category === filter) {
+                            post.style.display = 'block';
+                            post.style.animation = 'fadeIn 0.5s ease';
+                        } else {
+                            post.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

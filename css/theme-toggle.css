@@ -1,0 +1,239 @@
+/* ============================================ */
+/* THEME TOGGLE (DARK/LIGHT MODE) */
+/* ============================================ */
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--accent);
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 9998;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(20deg);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+/* Light Theme Overrides */
+body.light-theme {
+    --black: #ffffff;
+    --black-90: #f8f9fa;
+    --black-80: #f1f3f5;
+    --white: #000000;
+    --white-90: #1a1a1a;
+    --white-80: #333333;
+    --white-70: #4d4d4d;
+    --white-60: #666666;
+    --white-40: #999999;
+    --white-20: #cccccc;
+    --white-10: #e6e6e6;
+    --white-05: #f2f2f2;
+}
+
+/* Light Theme: Gradient Overlay */
+body.light-theme .gradient-overlay {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(240, 240, 245, 0.9) 50%,
+        rgba(255, 255, 255, 0.95) 100%
+    );
+}
+
+/* Light Theme: Canvas Background */
+body.light-theme #canvas-3d {
+    opacity: 0.3;
+    filter: invert(1) hue-rotate(180deg);
+}
+
+/* Light Theme: Floating Orbs */
+body.light-theme .floating-orb {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(255, 255, 255, 0.3));
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
+}
+
+/* Light Theme: Glass Cards */
+body.light-theme .glass-card {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Light Theme: Service Cards */
+body.light-theme .service-card {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light-theme .service-card:hover {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 12px 48px rgba(212, 175, 55, 0.3) !important;
+}
+
+/* Light Theme: Navigation */
+body.light-theme nav {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Light Theme: Buttons */
+body.light-theme .btn-primary {
+    background: var(--accent);
+    color: #000;
+}
+
+body.light-theme .btn-secondary {
+    background: rgba(0, 0, 0, 0.1);
+    color: #000;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .btn-secondary:hover {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+/* Light Theme: Footer */
+body.light-theme footer {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Light Theme: Mobile Menu */
+body.light-theme .mobile-menu {
+    background: rgba(255, 255, 255, 0.98);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Light Theme: Cookie Banner */
+body.light-theme .cookie-banner {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Light Theme: Newsletter Modal */
+body.light-theme .newsletter-modal {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+body.light-theme .newsletter-modal-content {
+    background: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Light Theme: Inputs */
+body.light-theme input,
+body.light-theme textarea,
+body.light-theme select {
+    background: rgba(0, 0, 0, 0.05) !important;
+    border-color: rgba(0, 0, 0, 0.2) !important;
+    color: #000 !important;
+}
+
+body.light-theme input::placeholder,
+body.light-theme textarea::placeholder {
+    color: rgba(0, 0, 0, 0.4) !important;
+}
+
+body.light-theme input:focus,
+body.light-theme textarea:focus {
+    background: rgba(0, 0, 0, 0.08) !important;
+    border-color: var(--accent) !important;
+}
+
+/* Light Theme: FAQ */
+body.light-theme .faq-item {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .faq-item:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Light Theme: Portfolio Cards */
+body.light-theme .case-study-card {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Light Theme: Pricing Cards */
+body.light-theme .pricing-card {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-theme .pricing-card.featured {
+    border: 2px solid var(--accent) !important;
+    box-shadow: 0 12px 48px rgba(212, 175, 55, 0.3) !important;
+}
+
+/* Light Theme: Scroll Progress Bar */
+body.light-theme .scroll-progress {
+    background: linear-gradient(90deg, var(--accent) 0%, #000 100%);
+}
+
+/* Light Theme: Back to Top Button */
+body.light-theme .back-to-top {
+    background: var(--accent);
+    color: #000;
+}
+
+/* Light Theme: WhatsApp Widget */
+body.light-theme .whatsapp-widget {
+    background: #25D366;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Light Theme: Theme Toggle Button */
+body.light-theme .theme-toggle {
+    background: #1a1a1a;
+    color: var(--accent);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .theme-toggle {
+        bottom: 150px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Smooth transition for theme change */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.glass-card,
+.service-card,
+nav,
+footer,
+.mobile-menu,
+.cookie-banner,
+input,
+textarea,
+select {
+    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
