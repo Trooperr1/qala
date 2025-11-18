@@ -260,12 +260,13 @@ nav {
 }
 
 .nav-menu a.active {
-    color: #fff;
+    color: var(--accent);
     font-weight: 700;
 }
 
 .nav-menu a.active::before {
     width: 100%;
+    background: var(--accent);
 }
 
 #google_translate_element select {
@@ -1745,5 +1746,31 @@ footer a:hover {
     .cookie-btn {
         width: 100%;
         text-align: center;
+    }
+}
+
+/* ============================================
+   CLIENT LOGOS
+   ============================================ */
+.client-logo {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-bold);
+    color: var(--white-30);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 20px;
+    transition: all var(--transition-base) var(--ease-out);
+    cursor: default;
+}
+
+.client-logo:hover {
+    color: var(--white-70);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .client-logo {
+        font-size: var(--text-base);
+        padding: 15px;
     }
 }

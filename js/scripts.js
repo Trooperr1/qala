@@ -371,3 +371,30 @@ styleSheet.insertRule(slideDownAnimation, styleSheet.cssRules.length);
 
 // Initialize cookie consent on page load
 document.addEventListener('DOMContentLoaded', initCookieConsent);
+
+// ============================================
+// ACTIVE NAVIGATION STATE
+// ============================================
+function setActiveNavigation() {
+    // Get current page filename
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    
+    // Get all navigation links
+    const navLinks = document.querySelectorAll('.nav-menu a, .mobile-menu-link');
+    
+    navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href');
+        
+        // Check if link matches current page
+        if (linkHref === currentPage || 
+            (currentPage === '' && linkHref === 'index.html') ||
+            (currentPage === 'index.html' && linkHref === 'index.html')) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+// Initialize active navigation on page load
+document.addEventListener('DOMContentLoaded', setActiveNavigation);
