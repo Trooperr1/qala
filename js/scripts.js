@@ -789,3 +789,182 @@ document.addEventListener('DOMContentLoaded', () => {
     initNewsletterModal();
     initFloatingCTA();
 });
+
+// ============================================
+// PORTFOLIO FILTERING
+// ============================================
+function initPortfolioFilter() {
+    const filterButtons = document.querySelectorAll('.portfolio-filter');
+    const caseStudies = document.querySelectorAll('.case-study-card');
+
+    if (filterButtons.length === 0 || caseStudies.length === 0) return;
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+
+            // Update active button
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.style.background = 'rgba(255, 255, 255, 0.1)';
+                btn.style.color = 'var(--white)';
+                btn.style.border = '1px solid var(--white-20)';
+            });
+
+            button.classList.add('active');
+            button.style.background = 'var(--accent)';
+            button.style.color = '#000';
+            button.style.border = 'none';
+
+            // Filter case studies
+            caseStudies.forEach(card => {
+                const categories = card.getAttribute('data-category');
+
+                if (filter === 'all' || categories.includes(filter)) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeIn 0.5s ease';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Add hover effects
+    filterButtons.forEach(button => {
+        button.addEventListener('mouseenter', () => {
+            if (!button.classList.contains('active')) {
+                button.style.background = 'rgba(255, 255, 255, 0.15)';
+                button.style.borderColor = 'var(--accent)';
+            }
+        });
+
+        button.addEventListener('mouseleave', () => {
+            if (!button.classList.contains('active')) {
+                button.style.background = 'rgba(255, 255, 255, 0.1)';
+                button.style.borderColor = 'var(--white-20)';
+            }
+        });
+    });
+}
+
+// Initialize portfolio filter on page load
+document.addEventListener('DOMContentLoaded', initPortfolioFilter);
+
+// ============================================
+// FAQ SEARCH FUNCTIONALITY
+// ============================================
+function initFAQSearch() {
+    const searchInput = document.getElementById('faqSearch');
+    const faqItems = document.querySelectorAll('.faq-item');
+    const faqCategories = document.querySelectorAll('.faq-category');
+
+    if (!searchInput || faqItems.length === 0) return;
+
+    searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase().trim();
+
+        // If search is empty, show all
+        if (searchTerm === '') {
+            faqItems.forEach(item => {
+                item.style.display = 'block';
+            });
+            faqCategories.forEach(category => {
+                category.style.display = 'block';
+            });
+            return;
+        }
+
+        // Search through FAQ items
+        let hasVisibleItems = false;
+        faqCategories.forEach(category => {
+            let categoryHasVisibleItems = false;
+
+            const items = category.querySelectorAll('.faq-item');
+            items.forEach(item => {
+                const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    categoryHasVisibleItems = true;
+                    hasVisibleItems = true;
+
+                    // Highlight matching text
+                    highlightText(item, searchTerm);
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Hide category if no items match
+            if (categoryHasVisibleItems) {
+                category.style.display = 'block';
+            } else {
+                category.style.display = 'none';
+            }
+        });
+
+        // Show "no results" message if needed
+        showNoResultsMessage(hasVisibleItems);
+    });
+
+    function highlightText(item, searchTerm) {
+        // Simple highlight effect - you could enhance this further
+        const question = item.querySelector('.faq-question');
+        if (question.textContent.toLowerCase().includes(searchTerm)) {
+            question.style.background = 'rgba(212, 175, 55, 0.1)';
+        } else {
+            question.style.background = '';
+        }
+    }
+
+    function showNoResultsMessage(hasResults) {
+        let noResultsMsg = document.getElementById('faq-no-results');
+
+        if (!hasResults) {
+            if (!noResultsMsg) {
+                noResultsMsg = document.createElement('div');
+                noResultsMsg.id = 'faq-no-results';
+                noResultsMsg.style.cssText = 'text-align: center; padding: 60px 20px; color: var(--white-60);';
+                noResultsMsg.innerHTML = `
+                    <div style="font-size: 3rem; margin-bottom: 20px;">🔍</div>
+                    <h3 style="font-size: 1.5rem; color: var(--white-80); margin-bottom: 10px;">No results found</h3>
+                    <p>Try different keywords or <a href="contact.html" style="color: var(--accent); text-decoration: underline;">contact us</a> directly</p>
+                `;
+                document.querySelector('.faq-container').appendChild(noResultsMsg);
+            }
+            noResultsMsg.style.display = 'block';
+        } else {
+            if (noResultsMsg) {
+                noResultsMsg.style.display = 'none';
+            }
+        }
+    }
+}
+
+// Initialize FAQ search on page load
+document.addEventListener('DOMContentLoaded', initFAQSearch);
+
+// ============================================
+// SCROLL PROGRESS BAR
+// ============================================
+function initScrollProgress() {
+    // Create progress bar if it doesn't exist
+    let progressBar = document.querySelector('.scroll-progress');
+    if (!progressBar) {
+        progressBar = document.createElement('div');
+        progressBar.className = 'scroll-progress';
+        document.body.appendChild(progressBar);
+    }
+
+    // Update progress on scroll
+    window.addEventListener('scroll', () => {
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (window.scrollY / windowHeight) * 100;
+        progressBar.style.width = scrolled + '%';
+    });
+}
+
+// Initialize scroll progress on page load
+document.addEventListener('DOMContentLoaded', initScrollProgress);

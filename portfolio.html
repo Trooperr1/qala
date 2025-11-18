@@ -139,10 +139,29 @@
             <h2 class="section-title">Case Studies</h2>
             <p class="section-subtitle">Real results from real clients - transforming businesses with innovative solutions</p>
 
+            <!-- Portfolio Filter Buttons -->
+            <div style="max-width: 1400px; margin: 40px auto 60px; padding: 0 5%; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <button class="portfolio-filter active" data-filter="all" style="padding: 12px 28px; background: var(--accent); color: #000; border: none; border-radius: var(--radius-lg); font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 0.5px;">
+                    All Projects
+                </button>
+                <button class="portfolio-filter" data-filter="ai" style="padding: 12px 28px; background: rgba(255, 255, 255, 0.1); color: var(--white); border: 1px solid var(--white-20); border-radius: var(--radius-lg); font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 0.5px;">
+                    AI Solutions
+                </button>
+                <button class="portfolio-filter" data-filter="web" style="padding: 12px 28px; background: rgba(255, 255, 255, 0.1); color: var(--white); border: 1px solid var(--white-20); border-radius: var(--radius-lg); font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 0.5px;">
+                    Web Development
+                </button>
+                <button class="portfolio-filter" data-filter="social" style="padding: 12px 28px; background: rgba(255, 255, 255, 0.1); color: var(--white); border: 1px solid var(--white-20); border-radius: var(--radius-lg); font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 0.5px;">
+                    Social Media
+                </button>
+                <button class="portfolio-filter" data-filter="voice" style="padding: 12px 28px; background: rgba(255, 255, 255, 0.1); color: var(--white); border: 1px solid var(--white-20); border-radius: var(--radius-lg); font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 0.5px;">
+                    Voice Automation
+                </button>
+            </div>
+
             <div style="max-width: 1400px; margin: 0 auto; padding: 0 5%;">
 
                 <!-- Case Study 1 - AI Chatbot Implementation -->
-                <div class="case-study-card">
+                <div class="case-study-card" data-category="ai">
                     <div class="case-study-header">
                         <div>
                             <span class="case-category">AI SOLUTIONS</span>
@@ -190,7 +209,7 @@
                 </div>
 
                 <!-- Case Study 2 - E-commerce Website + Social Media -->
-                <div class="case-study-card">
+                <div class="case-study-card" data-category="web social">
                     <div class="case-study-header">
                         <div>
                             <span class="case-category">WEB DEVELOPMENT • SOCIAL MEDIA</span>
@@ -238,7 +257,7 @@
                 </div>
 
                 <!-- Case Study 3 - Voice Agent for Service Business -->
-                <div class="case-study-card">
+                <div class="case-study-card" data-category="ai voice">
                     <div class="case-study-header">
                         <div>
                             <span class="case-category">AI VOICE AUTOMATION</span>
